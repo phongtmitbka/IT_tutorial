@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/test', 'Controller@test');
 Route::get('/{view?}', function () {
     return view('app');
-});
+})->where('view', '(.*)');
