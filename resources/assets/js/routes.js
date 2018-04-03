@@ -36,6 +36,6 @@ export default {
             path: '/qa',
             component: QA,
         },
-        { path: '*', component: NotFound }
+        {path: '*', component: NotFound}
     ]
 };
