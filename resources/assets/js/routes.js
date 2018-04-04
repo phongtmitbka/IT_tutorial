@@ -17,11 +17,11 @@ export default {
             name: 'course',
             path: '/course',
             component: Index,
-            redirect: '/course/lesson',
+            redirect: { name: 'content', params: {course: 'php-advance', lesson: 0} },
             children: [
                 {
-                    name: 'lesson',
-                    path: 'lesson',
+                    name: 'content',
+                    path: '/course/:course/lesson/:lesson',
                     component: Lesson,
                 }
             ]

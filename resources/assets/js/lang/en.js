@@ -5,4 +5,10 @@ export default {
   course: 'Course',
   about: 'About',
   qa: 'Q&A',
+  introduction: 'Introduction',
+  example: 'Example',
+  summary: 'Summary',
+  preview: 'Preview',
+  next: 'Next',
+  start: 'Start',
 }

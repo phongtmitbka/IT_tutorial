@@ -1124,7 +1124,7 @@ function injectStyle (ssrContext) {
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(123)
 /* template */
 var __vue_template__ = __webpack_require__(27)
 /* template functional */
@@ -15371,10 +15371,10 @@ if (inBrowser && window.Vue) {
         name: 'course',
         path: '/course',
         component: __WEBPACK_IMPORTED_MODULE_3__components_contents_courses_Index___default.a,
-        redirect: '/course/lesson',
+        redirect: { name: 'content', params: { course: 'php-advance', lesson: 0 } },
         children: [{
-            name: 'lesson',
-            path: 'lesson',
+            name: 'content',
+            path: '/course/:course/lesson/:lesson',
             component: __WEBPACK_IMPORTED_MODULE_4__components_contents_courses_Lesson___default.a
         }]
     }, {
@@ -15590,7 +15590,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "left-menu" }, [
-    1
+    _vm.$route.name != "home"
       ? _c("div", [
           _c("div", { staticClass: "title" }, [_vm._v("CSS cơ bản")]),
           _vm._v(" "),
@@ -15896,10 +15896,7 @@ var render = function() {
             )
           ])
         ])
-      : _vm._e(),
-    _vm._v(" "),
-    0
-      ? _c("div", [
+      : _c("div", [
           _c("div", { staticClass: "title" }, [_vm._v("PHP")]),
           _vm._v(" "),
           _c("ul", [
@@ -16088,7 +16085,6 @@ var render = function() {
             )
           ])
         ])
-      : _vm._e()
   ])
 }
 var staticRenderFns = []
@@ -16112,7 +16108,7 @@ function injectStyle (ssrContext) {
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(124)
 /* template */
 var __vue_template__ = __webpack_require__(31)
 /* template functional */
@@ -16200,117 +16196,28 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "about-course" }, [
-      _c("div", { staticClass: "about" }, [
+  return _c(
+    "div",
+    { staticClass: "about-course" },
+    _vm._l(_vm.courses, function(course) {
+      return _c("div", { staticClass: "about" }, [
         _c("div", { staticClass: "box-title" }, [
           _c("div", { staticClass: "title" }, [
-            _vm._v("\n                PHP cơ bản\n            ")
+            _vm._v("\n                " + _vm._s(course) + "\n            ")
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "start" }, [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("Bắt đầu >>")])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "description" }, [
-          _vm._v(
-            "\n            PHP là một ngôn ngữ lập trình phía Server dùng để xây dựng các ứng dụng Website.\n            Điểm mạnh của PHP là tính cộng đồng của nó cao, nghĩa là trên thế giới có khá nhiều lập trình viên sử dụng PHP để xây dựng dự án cho riêng họ hoặc cho khách hàng của họ.\n            Ngoài ra một điểm mạnh nữa của PHP đó là có khá nhiều CMS, Framework được xây dựng từ PHP giúp rút gọn quá trình tạo một website, vì vậy có khá nhiều lập trình viên lựa chọn ngôn ngữ này.\n        "
+          _c(
+            "div",
+            { staticClass: "start" },
+            [
+              _c(
+                "router-link",
+                { attrs: { to: "/course/" + course + "/lesson/0" } },
+                [_vm._v(_vm._s(_vm.$t("start")) + " >>")]
+              )
+            ],
+            1
           )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "about" }, [
-        _c("div", { staticClass: "box-title" }, [
-          _c("div", { staticClass: "title" }, [
-            _vm._v("\n                PHP nâng cao\n            ")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "start" }, [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("Bắt đầu >>")])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "description" }, [
-          _vm._v(
-            "\n            PHP là một ngôn ngữ lập trình phía Server dùng để xây dựng các ứng dụng Website.\n            Điểm mạnh của PHP là tính cộng đồng của nó cao, nghĩa là trên thế giới có khá nhiều lập trình viên sử dụng PHP để xây dựng dự án cho riêng họ hoặc cho khách hàng của họ.\n            Ngoài ra một điểm mạnh nữa của PHP đó là có khá nhiều CMS, Framework được xây dựng từ PHP giúp rút gọn quá trình tạo một website, vì vậy có khá nhiều lập trình viên lựa chọn ngôn ngữ này.\n        "
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "about" }, [
-        _c("div", { staticClass: "box-title" }, [
-          _c("div", { staticClass: "title" }, [
-            _vm._v("\n                HTML\n            ")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "start" }, [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("Bắt đầu >>")])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "description" }, [
-          _vm._v(
-            "\n            PHP là một ngôn ngữ lập trình phía Server dùng để xây dựng các ứng dụng Website.\n            Điểm mạnh của PHP là tính cộng đồng của nó cao, nghĩa là trên thế giới có khá nhiều lập trình viên sử dụng PHP để xây dựng dự án cho riêng họ hoặc cho khách hàng của họ.\n            Ngoài ra một điểm mạnh nữa của PHP đó là có khá nhiều CMS, Framework được xây dựng từ PHP giúp rút gọn quá trình tạo một website, vì vậy có khá nhiều lập trình viên lựa chọn ngôn ngữ này.\n        "
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "about" }, [
-        _c("div", { staticClass: "box-title" }, [
-          _c("div", { staticClass: "title" }, [
-            _vm._v("\n                CSS\n            ")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "start" }, [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("Bắt đầu >>")])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "description" }, [
-          _vm._v(
-            "\n            PHP là một ngôn ngữ lập trình phía Server dùng để xây dựng các ứng dụng Website.\n            Điểm mạnh của PHP là tính cộng đồng của nó cao, nghĩa là trên thế giới có khá nhiều lập trình viên sử dụng PHP để xây dựng dự án cho riêng họ hoặc cho khách hàng của họ.\n            Ngoài ra một điểm mạnh nữa của PHP đó là có khá nhiều CMS, Framework được xây dựng từ PHP giúp rút gọn quá trình tạo một website, vì vậy có khá nhiều lập trình viên lựa chọn ngôn ngữ này.\n        "
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "about" }, [
-        _c("div", { staticClass: "box-title" }, [
-          _c("div", { staticClass: "title" }, [
-            _vm._v("\n                Javascript "),
-            _c("br"),
-            _vm._v(" cơ bản\n            ")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "start" }, [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("Bắt đầu >>")])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "description" }, [
-          _vm._v(
-            "\n            PHP là một ngôn ngữ lập trình phía Server dùng để xây dựng các ứng dụng Website.\n            Điểm mạnh của PHP là tính cộng đồng của nó cao, nghĩa là trên thế giới có khá nhiều lập trình viên sử dụng PHP để xây dựng dự án cho riêng họ hoặc cho khách hàng của họ.\n            Ngoài ra một điểm mạnh nữa của PHP đó là có khá nhiều CMS, Framework được xây dựng từ PHP giúp rút gọn quá trình tạo một website, vì vậy có khá nhiều lập trình viên lựa chọn ngôn ngữ này.\n        "
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "about" }, [
-        _c("div", { staticClass: "box-title" }, [
-          _c("div", { staticClass: "title" }, [
-            _vm._v("\n                Javascript "),
-            _c("br"),
-            _vm._v("nâng cao\n            ")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "start" }, [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("Bắt đầu >>")])
-          ])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "description" }, [
@@ -16319,9 +16226,10 @@ var staticRenderFns = [
           )
         ])
       ])
-    ])
-  }
-]
+    })
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -16885,7 +16793,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.example {\n  background: #d1ffdb;\n  padding: 10px 20px;\n  border-radius: 10px;\n  margin: 20px 0;\n}\n.example .content {\n    width: 100%;\n    min-height: 400px;\n}\n.example .excute {\n    height: 70px;\n    line-height: 70px;\n}\n.example .excute .btn-option {\n      background: #c1d2c5;\n      padding: 10px 10px;\n}\n.example .excute-content {\n    background: #ffffff;\n}\n.example .excute-content iframe {\n      width: 100%;\n      min-height: 500px;\n}\n", ""]);
+exports.push([module.i, "\n.example {\n  background: #d1ffdb;\n  padding: 10px 20px;\n  border-radius: 10px;\n  margin: 20px 0;\n}\n.example .label {\n    font-size: 25px;\n}\n.example .content {\n    width: 100%;\n    min-height: 400px;\n}\n.example .excute {\n    height: 70px;\n    line-height: 70px;\n}\n.example .excute .btn-option {\n      background: #c1d2c5;\n      padding: 10px 10px;\n}\n.example .excute-content {\n    background: #ffffff;\n}\n.example .excute-content iframe {\n      width: 100%;\n      min-height: 500px;\n}\n", ""]);
 
 // exports
 
@@ -16898,47 +16806,53 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "example" }, [
+    _c("div", { staticClass: "label" }, [_vm._v(_vm._s(_vm.$t("example")))]),
+    _vm._v(" "),
+    _c("textarea", { staticClass: "content", attrs: { name: "content" } }, [
+      _vm._v(
+        "        <!DOCTYPE html>\n            <html>\n            <head>\n            <title>Page Title</title>\n            </head>\n            <body>\n                <h1>This is a Heading</h1>\n                <p>This is a paragraph.</p>\n            </body>\n        </html>\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "example" }, [
-      _c("div", { staticClass: "label" }, [_vm._v("Ví dụ")]),
+    return _c("div", { staticClass: "excute" }, [
+      _c(
+        "select",
+        { staticClass: "btn btn-option", attrs: { name: "option" } },
+        [
+          _c("option", { attrs: { value: "" } }, [_vm._v("Full width")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "" } }, [_vm._v("Iphone 7")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "" } }, [_vm._v("Iphone 8")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "" } }, [_vm._v("Galaxy S6")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "" } }, [_vm._v("Galaxy S7")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "" } }, [_vm._v("Galaxy S8")])
+        ]
+      ),
       _vm._v(" "),
-      _c("textarea", { staticClass: "content", attrs: { name: "content" } }, [
-        _vm._v(
-          "        <!DOCTYPE html>\n            <html>\n            <head>\n            <title>Page Title</title>\n            </head>\n            <body>\n                <h1>This is a Heading</h1>\n                <p>This is a paragraph.</p>\n            </body>\n        </html>\n    "
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "excute" }, [
-        _c(
-          "select",
-          { staticClass: "btn btn-option", attrs: { name: "option" } },
-          [
-            _c("option", { attrs: { value: "" } }, [_vm._v("Full width")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "" } }, [_vm._v("Iphone 7")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "" } }, [_vm._v("Iphone 8")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "" } }, [_vm._v("Galaxy S6")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "" } }, [_vm._v("Galaxy S7")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "" } }, [_vm._v("Galaxy S8")])
-          ]
-        ),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-primary" }, [_vm._v("Thực hiện")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "excute-content" }, [
-        _c("iframe", { attrs: { src: "", frameborder: "0" } })
-      ])
+      _c("button", { staticClass: "btn btn-primary" }, [_vm._v("Thực hiện")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "excute-content" }, [
+      _c("iframe", { attrs: { src: "", frameborder: "0" } })
     ])
   }
 ]
@@ -17050,28 +16964,44 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "intro" }, [
+    _c("h2", [_vm._v(_vm._s(_vm.$t("introduction")))]),
+    _vm._v(" "),
+    _c("hr"),
+    _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _vm._m(2)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "intro" }, [
-      _c("h5", [
-        _vm._v("\n        This tutorial teaches you everything about HTML. "),
-        _c("br")
-      ]),
-      _vm._v(" "),
-      _c("h5", [
-        _vm._v("\n        This tutorial teaches you everything about HTML. "),
-        _c("br")
-      ]),
-      _vm._v(" "),
-      _c("h5", [
-        _vm._v("\n        This tutorial teaches you everything about HTML. "),
-        _c("br")
-      ])
+    return _c("h5", [
+      _vm._v("\n        This tutorial teaches you everything about HTML. "),
+      _c("br")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [
+      _vm._v("\n        This tutorial teaches you everything about HTML. "),
+      _c("br")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [
+      _vm._v("\n        This tutorial teaches you everything about HTML. "),
+      _c("br")
     ])
   }
 ]
@@ -17183,28 +17113,44 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "summary" }, [
+    _c("h2", [_vm._v(_vm._s(_vm.$t("summary")))]),
+    _vm._v(" "),
+    _c("hr"),
+    _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _vm._m(2)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "summary" }, [
-      _c("h5", [
-        _vm._v("\n        This tutorial teaches you everything about HTML. "),
-        _c("br")
-      ]),
-      _vm._v(" "),
-      _c("h5", [
-        _vm._v("\n        This tutorial teaches you everything about HTML. "),
-        _c("br")
-      ]),
-      _vm._v(" "),
-      _c("h5", [
-        _vm._v("\n        This tutorial teaches you everything about HTML. "),
-        _c("br")
-      ])
+    return _c("h5", [
+      _vm._v("\n        This tutorial teaches you everything about HTML. "),
+      _c("br")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [
+      _vm._v("\n        This tutorial teaches you everything about HTML. "),
+      _c("br")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [
+      _vm._v("\n        This tutorial teaches you everything about HTML. "),
+      _c("br")
     ])
   }
 ]
@@ -20899,7 +20845,13 @@ VueI18n.version = '7.6.0';
   home: 'Trang chủ',
   course: 'Khóa học',
   about: 'Giới thiệu',
-  qa: 'Hỏi đáp'
+  qa: 'Hỏi đáp',
+  introduction: 'Giới thiệu',
+  example: 'Ví dụ',
+  summary: 'Tóm lại',
+  preview: 'Bài trước',
+  next: 'Bài tiếp',
+  start: 'Bắt đầu'
 });
 
 /***/ }),
@@ -20913,7 +20865,13 @@ VueI18n.version = '7.6.0';
   home: 'Home',
   course: 'Course',
   about: 'About',
-  qa: 'Q&A'
+  qa: 'Q&A',
+  introduction: 'Introduction',
+  example: 'Example',
+  summary: 'Summary',
+  preview: 'Preview',
+  next: 'Next',
+  start: 'Start'
 });
 
 /***/ }),
@@ -20947,6 +20905,119 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     toUpper: function toUpper(val) {
       return val.toUpperCase();
     }
+  }
+});
+
+/***/ }),
+/* 123 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  mounted: function mounted() {}
+});
+
+/***/ }),
+/* 124 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      courses: ['php-basic', 'php-advance', 'html', 'css']
+    };
   }
 });
 

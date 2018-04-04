@@ -1,6 +1,6 @@
 <template>
     <div class="example">
-        <div class="label">Ví dụ</div>
+        <div class="label">{{ $t('example') }}</div>
         <textarea name="content" class="content">
             <!DOCTYPE html>
                 <html>
@@ -38,7 +38,7 @@
         border-radius: 10px;
         margin: 20px 0;
         .label {
-
+            font-size: 25px;
         }
         .content {
             width: 100%;

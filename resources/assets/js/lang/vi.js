@@ -5,4 +5,10 @@ export default {
   course: 'Khóa học',
   about: 'Giới thiệu',
   qa: 'Hỏi đáp',
+  introduction: 'Giới thiệu',
+  example: 'Ví dụ',
+  summary: 'Tóm lại',
+  preview: 'Bài trước',
+  next: 'Bài tiếp',
+  start: 'Bắt đầu',
 }

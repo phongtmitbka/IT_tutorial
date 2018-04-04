@@ -1,5 +1,7 @@
 <template>
     <div class="intro">
+        <h2>{{ $t('introduction') }}</h2>
+        <hr>
         <h5>
             This tutorial teaches you everything about HTML. <br>
         </h5>

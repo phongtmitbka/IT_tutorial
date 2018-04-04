@@ -1,6 +1,6 @@
 <template>
     <div class="left-menu">
-        <div v-if="1">
+        <div v-if="$route.name != 'home'">
             <div class="title">CSS cơ bản</div>
             <ul>
                 <li><router-link to="/course/lesson">Mở đầu</router-link></li>
@@ -35,7 +35,7 @@
                 <li><router-link to="/course/lesson">Viết chương trình đầu tiên</router-link></li>
             </ul>
         </div>
-        <div v-if="0">
+        <div v-else>
             <div class="title">PHP</div>
             <ul>
                 <li><router-link to="/course">PHP cơ bản</router-link></li>
@@ -66,7 +66,12 @@
         </div>
     </div>
 </template>
-
+<script>
+    export default {
+      mounted() {
+      }
+    }
+</script>
 <style lang="scss" scoped>
     .left-menu {
         width: 100%;
