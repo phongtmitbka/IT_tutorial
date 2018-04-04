@@ -18,7 +18,7 @@
 <style lang="scss" scoped>
     .intro {
         min-height: 300px;
-        background: #f4f5f2;
+        background: #e5ffb0;
         border-radius: 5px;
         padding: 20px;
     }

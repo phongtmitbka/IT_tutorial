@@ -15894,6 +15894,20 @@ var render = function() {
               ],
               1
             )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "title" }, [_vm._v("Test")]),
+          _vm._v(" "),
+          _c("ul", [
+            _c(
+              "li",
+              [
+                _c("router-link", { attrs: { to: "/course/lesson" } }, [
+                  _vm._v("Test 1")
+                ])
+              ],
+              1
+            )
           ])
         ])
       : _c("div", [
@@ -16685,6 +16699,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_lesson_Intro___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__common_lesson_Intro__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_lesson_Summary__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_lesson_Summary___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__common_lesson_Summary__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_lesson_Test__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_lesson_Test___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__common_lesson_Test__);
 //
 //
 //
@@ -16695,6 +16711,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+
 
 
 
@@ -16703,7 +16721,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     components: {
         Example: __WEBPACK_IMPORTED_MODULE_0__common_lesson_Example___default.a,
         Intro: __WEBPACK_IMPORTED_MODULE_1__common_lesson_Intro___default.a,
-        SummaryLesson: __WEBPACK_IMPORTED_MODULE_2__common_lesson_Summary___default.a
+        SummaryLesson: __WEBPACK_IMPORTED_MODULE_2__common_lesson_Summary___default.a,
+        Test: __WEBPACK_IMPORTED_MODULE_3__common_lesson_Test___default.a
     }
 });
 
@@ -16793,7 +16812,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.example {\n  background: #d1ffdb;\n  padding: 10px 20px;\n  border-radius: 10px;\n  margin: 20px 0;\n}\n.example .label {\n    font-size: 25px;\n}\n.example .content {\n    width: 100%;\n    min-height: 400px;\n}\n.example .excute {\n    height: 70px;\n    line-height: 70px;\n}\n.example .excute .btn-option {\n      background: #c1d2c5;\n      padding: 10px 10px;\n}\n.example .excute-content {\n    background: #ffffff;\n}\n.example .excute-content iframe {\n      width: 100%;\n      min-height: 500px;\n}\n", ""]);
+exports.push([module.i, "\n.example {\n  background: #b4e8c0;\n  padding: 10px 20px;\n  border-radius: 10px;\n  margin: 20px 0;\n}\n.example .label {\n    font-size: 25px;\n}\n.example .content {\n    width: 100%;\n    min-height: 400px;\n}\n.example .excute {\n    height: 70px;\n    line-height: 70px;\n}\n.example .excute .btn-option {\n      background: #c1d2c5;\n      padding: 10px 10px;\n}\n.example .excute-content {\n    background: #ffffff;\n}\n.example .excute-content iframe {\n      width: 100%;\n      min-height: 500px;\n}\n", ""]);
 
 // exports
 
@@ -16815,7 +16834,13 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _vm._m(0),
+    _c("div", { staticClass: "excute" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("button", { staticClass: "btn btn-primary" }, [
+        _vm._v(_vm._s(_vm.$t("run")))
+      ])
+    ]),
     _vm._v(" "),
     _vm._m(1)
   ])
@@ -16825,27 +16850,23 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "excute" }, [
-      _c(
-        "select",
-        { staticClass: "btn btn-option", attrs: { name: "option" } },
-        [
-          _c("option", { attrs: { value: "" } }, [_vm._v("Full width")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "" } }, [_vm._v("Iphone 7")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "" } }, [_vm._v("Iphone 8")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "" } }, [_vm._v("Galaxy S6")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "" } }, [_vm._v("Galaxy S7")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "" } }, [_vm._v("Galaxy S8")])
-        ]
-      ),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-primary" }, [_vm._v("Thực hiện")])
-    ])
+    return _c(
+      "select",
+      { staticClass: "btn btn-option", attrs: { name: "option" } },
+      [
+        _c("option", { attrs: { value: "" } }, [_vm._v("Full width")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "" } }, [_vm._v("Iphone 7")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "" } }, [_vm._v("Iphone 8")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "" } }, [_vm._v("Galaxy S6")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "" } }, [_vm._v("Galaxy S7")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "" } }, [_vm._v("Galaxy S8")])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -16951,7 +16972,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.intro[data-v-a53fdadc] {\n  min-height: 300px;\n  background: #f4f5f2;\n  border-radius: 5px;\n  padding: 20px;\n}\n", ""]);
+exports.push([module.i, "\n.intro[data-v-a53fdadc] {\n  min-height: 300px;\n  background: #e5ffb0;\n  border-radius: 5px;\n  padding: 20px;\n}\n", ""]);
 
 // exports
 
@@ -17100,7 +17121,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.summary[data-v-62630968] {\n  min-height: 300px;\n  background: #f0f2f5;\n  border-radius: 5px;\n  padding: 20px;\n}\n", ""]);
+exports.push([module.i, "\n.summary[data-v-62630968] {\n  min-height: 300px;\n  background: #e4e6e8;\n  border-radius: 5px;\n  padding: 20px;\n  margin-bottom: 20px;\n}\n", ""]);
 
 // exports
 
@@ -17181,7 +17202,9 @@ var render = function() {
       _vm._v(" "),
       _c("example"),
       _vm._v(" "),
-      _c("summary-lesson")
+      _c("summary-lesson"),
+      _vm._v(" "),
+      _c("test")
     ],
     1
   )
@@ -17855,7 +17878,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.breadcrumb[data-v-553598be] {\n  background: transparent;\n  margin-bottom: 0;\n}\n.breadcrumb ul[data-v-553598be] {\n    list-style: none;\n    width: 100%;\n}\n.breadcrumb ul li[data-v-553598be] {\n      float: left;\n}\n.breadcrumb ul li a[data-v-553598be] {\n        background: #0c5460;\n        color: #ffffff;\n        padding: 5px 10px;\n        margin: 0px 5px;\n        border-radius: 3px;\n}\n.breadcrumb ul .lang[data-v-553598be] {\n      float: right;\n      color: #ffffff;\n      padding: 3px;\n      border-radius: 4px;\n      cursor: pointer;\n      text-align: center;\n      width: 105px;\n}\n.breadcrumb ul .vi a[data-v-553598be] {\n      background: #dc1111;\n}\n.breadcrumb ul .en a[data-v-553598be] {\n      background: #4343dc;\n}\n", ""]);
+exports.push([module.i, "\n.breadcrumb[data-v-553598be] {\n  background: transparent;\n  margin-bottom: 0;\n}\n.breadcrumb ul[data-v-553598be] {\n    list-style: none;\n    width: 100%;\n}\n.breadcrumb ul li[data-v-553598be] {\n      float: left;\n}\n.breadcrumb ul li a[data-v-553598be] {\n        background: #0c5460;\n        color: #ffffff;\n        padding: 5px 20px;\n        margin: 0px 5px;\n        border-radius: 3px;\n}\n.breadcrumb ul .lang[data-v-553598be] {\n      float: right;\n      color: #ffffff;\n      padding: 3px;\n      border-radius: 4px;\n      cursor: pointer;\n      text-align: center;\n}\n.breadcrumb ul .vi a[data-v-553598be] {\n      background: #dc1111;\n}\n.breadcrumb ul .en a[data-v-553598be] {\n      background: #4343dc;\n}\n", ""]);
 
 // exports
 
@@ -17883,18 +17906,14 @@ var render = function() {
       _c(
         "li",
         { staticClass: "lang vi" },
-        [
-          _c("router-link", { attrs: { to: "?lang=vi" } }, [
-            _vm._v("Tiếng Việt")
-          ])
-        ],
+        [_c("router-link", { attrs: { to: "?lang=vi" } }, [_vm._v("VI")])],
         1
       ),
       _vm._v(" "),
       _c(
         "li",
         { staticClass: "lang en" },
-        [_c("router-link", { attrs: { to: "?lang=en" } }, [_vm._v("English")])],
+        [_c("router-link", { attrs: { to: "?lang=en" } }, [_vm._v("EN")])],
         1
       )
     ])
@@ -20851,7 +20870,9 @@ VueI18n.version = '7.6.0';
   summary: 'Tóm lại',
   preview: 'Bài trước',
   next: 'Bài tiếp',
-  start: 'Bắt đầu'
+  start: 'Bắt đầu',
+  run: 'Thực hiện',
+  test: 'Kiểm tra'
 });
 
 /***/ }),
@@ -20871,7 +20892,9 @@ VueI18n.version = '7.6.0';
   summary: 'Summary',
   preview: 'Preview',
   next: 'Next',
-  start: 'Start'
+  start: 'Start',
+  run: 'Run',
+  test: 'Test'
 });
 
 /***/ }),
@@ -20982,6 +21005,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {}
@@ -21020,6 +21047,243 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     };
   }
 });
+
+/***/ }),
+/* 125 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(127)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = __webpack_require__(129)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-0d63b648"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/common/lesson/Test.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0d63b648", Component.options)
+  } else {
+    hotAPI.reload("data-v-0d63b648", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 126 */,
+/* 127 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(128);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("225fdcbe", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0d63b648\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../node_modules/sass-loader/lib/loader.js!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Test.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0d63b648\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../node_modules/sass-loader/lib/loader.js!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Test.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 128 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.test[data-v-0d63b648] {\n  min-height: 300px;\n  background: #dae7fb;\n  border-radius: 5px;\n  padding: 20px;\n  margin-bottom: 20px;\n}\n.test .question[data-v-0d63b648] {\n    margin: 20px 10px;\n}\n.test .question h5[data-v-0d63b648] {\n      margin: 0 30px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 129 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "test" }, [
+    _c("h2", [_vm._v(_vm._s(_vm.$t("test")))]),
+    _vm._v(" "),
+    _c("hr"),
+    _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _vm._m(2)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "question" }, [
+      _c("h3", [
+        _vm._v("1. This tutorial teaches you everything about HTML? ")
+      ]),
+      _vm._v(" "),
+      _c("h4", [
+        _c("input", { attrs: { type: "radio", name: "q1" } }),
+        _vm._v(
+          "\n            A. This tutorial teaches you everything about HTML.\n        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("h4", [
+        _c("input", { attrs: { type: "radio", name: "q1" } }),
+        _vm._v(
+          "\n            B. This tutorial teaches you everything about HTML.\n        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("h4", [
+        _c("input", { attrs: { type: "radio", name: "q1" } }),
+        _vm._v(
+          "\n            C. This tutorial teaches you everything about HTML.\n        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("h4", [
+        _c("input", { attrs: { type: "radio", name: "q1" } }),
+        _vm._v(
+          "\n            D. This tutorial teaches you everything about HTML.\n        "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "question" }, [
+      _c("h3", [
+        _vm._v("2. This tutorial teaches you everything about HTML? ")
+      ]),
+      _vm._v(" "),
+      _c("h4", [
+        _c("input", { attrs: { type: "radio", name: "q2" } }),
+        _vm._v(
+          "\n            A. This tutorial teaches you everything about HTML.\n        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("h4", [
+        _c("input", { attrs: { type: "radio", name: "q2" } }),
+        _vm._v(
+          "\n            B. This tutorial teaches you everything about HTML.\n        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("h4", [
+        _c("input", { attrs: { type: "radio", name: "q2" } }),
+        _vm._v(
+          "\n            C. This tutorial teaches you everything about HTML.\n        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("h4", [
+        _c("input", { attrs: { type: "radio", name: "q2" } }),
+        _vm._v(
+          "\n            D. This tutorial teaches you everything about HTML.\n        "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "question" }, [
+      _c("h3", [
+        _vm._v("3. This tutorial teaches you everything about HTML? ")
+      ]),
+      _vm._v(" "),
+      _c("h4", [
+        _c("input", { attrs: { type: "radio", name: "q3" } }),
+        _vm._v(
+          "\n            A. This tutorial teaches you everything about HTML.\n        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("h4", [
+        _c("input", { attrs: { type: "radio", name: "q3" } }),
+        _vm._v(
+          "\n            B. This tutorial teaches you everything about HTML.\n        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("h4", [
+        _c("input", { attrs: { type: "radio", name: "q3" } }),
+        _vm._v(
+          "\n            C. This tutorial teaches you everything about HTML.\n        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("h4", [
+        _c("input", { attrs: { type: "radio", name: "q3" } }),
+        _vm._v(
+          "\n            D. This tutorial teaches you everything about HTML.\n        "
+        )
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-0d63b648", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

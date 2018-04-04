@@ -11,4 +11,6 @@ export default {
   preview: 'Preview',
   next: 'Next',
   start: 'Start',
+  run: 'Run',
+  test: 'Test',
 }

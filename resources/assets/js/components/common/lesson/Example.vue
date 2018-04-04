@@ -22,7 +22,7 @@
                 <option value="">Galaxy S7</option>
                 <option value="">Galaxy S8</option>
             </select>
-            <button class="btn btn-primary">Thực hiện</button>
+            <button class="btn btn-primary">{{ $t('run') }}</button>
         </div>
         <div class="excute-content">
             <iframe src="" frameborder="0">
@@ -33,7 +33,7 @@
 
 <style lang="scss">
     .example {
-        background: #d1ffdb;
+        background: #b4e8c0;
         padding: 10px 20px;
         border-radius: 10px;
         margin: 20px 0;

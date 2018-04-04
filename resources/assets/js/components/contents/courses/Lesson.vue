@@ -4,6 +4,7 @@
         <intro></intro>
         <example></example>
         <summary-lesson></summary-lesson>
+        <test></test>
 
     </div>
 </template>
@@ -12,11 +13,13 @@
     import Example from '../../common/lesson/Example';
     import Intro from '../../common/lesson/Intro';
     import SummaryLesson from '../../common/lesson/Summary';
+    import Test from '../../common/lesson/Test';
     export default {
         components: {
             Example,
             Intro,
             SummaryLesson,
+            Test,
         }
     }
 </script>

@@ -18,8 +18,9 @@
 <style lang="scss" scoped>
     .summary {
         min-height: 300px;
-        background: #f0f2f5;
+        background: #e4e6e8;
         border-radius: 5px;
         padding: 20px;
+        margin-bottom: 20px;
     }
 </style>

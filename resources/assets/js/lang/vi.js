@@ -11,4 +11,6 @@ export default {
   preview: 'Bài trước',
   next: 'Bài tiếp',
   start: 'Bắt đầu',
+  run: 'Thực hiện',
+  test: 'Kiểm tra',
 }

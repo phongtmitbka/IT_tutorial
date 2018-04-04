@@ -4,8 +4,8 @@
             <li><a href="#">{{ $t('home') }}</a> </li>
             <li><a href="#">{{ $t('course') }}</a> </li>
             <li><a href="#">PHP cơ bản</a> </li>
-            <li class="lang vi"><router-link to="?lang=vi">Tiếng Việt</router-link></li>
-            <li class="lang en"><router-link to="?lang=en">English</router-link></li>
+            <li class="lang vi"><router-link to="?lang=vi">VI</router-link></li>
+            <li class="lang en"><router-link to="?lang=en">EN</router-link></li>
         </ul>
     </div>
 </template>
@@ -22,7 +22,7 @@
                 a {
                     background: #0c5460;
                     color: #ffffff;
-                    padding: 5px 10px;
+                    padding: 5px 20px;
                     margin: 0px 5px;
                     border-radius: 3px;
                 }
@@ -34,7 +34,6 @@
                 border-radius: 4px;
                 cursor: pointer;
                 text-align: center;
-                width: 105px;
             }
             .vi {
                 a {

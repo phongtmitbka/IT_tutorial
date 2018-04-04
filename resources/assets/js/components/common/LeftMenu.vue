@@ -34,6 +34,10 @@
                 <li><router-link to="/course/lesson">Cài đặt môi trường</router-link></li>
                 <li><router-link to="/course/lesson">Viết chương trình đầu tiên</router-link></li>
             </ul>
+            <div class="title">Test</div>
+            <ul>
+                <li><router-link to="/course/lesson">Test 1</router-link></li>
+            </ul>
         </div>
         <div v-else>
             <div class="title">PHP</div>
