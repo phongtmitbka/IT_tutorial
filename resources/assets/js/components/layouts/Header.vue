@@ -51,10 +51,6 @@
                 float: left;
                 a {
                     color: #ffffff;
-                    &:hover {
-                        padding: 26px 16px;
-                        background-color: #6f6fa5;
-                    }
                 }
             }
             h3 {

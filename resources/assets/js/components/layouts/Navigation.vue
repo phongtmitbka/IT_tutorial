@@ -2,21 +2,30 @@
     <div class="navigation">
         <ul>
             <li>
-                <router-link to="/">TRANG CHỦ</router-link>
+                <router-link to="/">{{ $t('home') | toUpper}}</router-link>
             </li>
             <li>
-                <router-link to="/about">GIỚI THIỆU</router-link>
+                <router-link to="/about">{{ $t('about') | toUpper}}</router-link>
             </li>
             <li>
-                <router-link to="/qa">HỎI ĐÁP</router-link>
+                <router-link to="/qa">{{ $t('qa') | toUpper }}</router-link>
             </li>
             <li>
-                <input type="text" class="form-control" placeholder="Nhập từ khóa tìm kiếm ...">
-                <button class="btn btn-primary">Tìm kiếm</button>
+                <input type="text" class="form-control" :placeholder="$t('searchPlaceHolder')">
+                <button class="btn btn-primary">{{ $t("search") }}</button>
             </li>
         </ul>
     </div>
 </template>
+<script>
+    export default {
+      filters: {
+        toUpper(val) {
+          return val.toUpperCase();
+        }
+      }
+    }
+</script>
 <style lang="scss">
     .container {
         position: relative;

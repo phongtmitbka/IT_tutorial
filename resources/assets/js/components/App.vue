@@ -24,9 +24,14 @@
             AppFooter,
             BreadeCrumb,
         },
+        watch: {
+          '$route.query.lang': function () {
+            window.i18n.locale = this.$route.query.lang ? this.$route.query.lang : window.i18n.locale;
+          }
+        },
         mounted() {
             rs.getRequest('TestRequest').getTest().then(res => {
-                console.log(res);
+
             });
         }
     }
