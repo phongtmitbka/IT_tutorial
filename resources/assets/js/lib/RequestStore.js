@@ -1,4 +1,4 @@
-import TestRequest from '../requests/TestRequest';
+import TestRequest from '../home/requests/TestRequest';
 
 const requestMap = {
     TestRequest
