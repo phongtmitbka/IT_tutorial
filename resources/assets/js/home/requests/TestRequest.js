@@ -1,4 +1,4 @@
-import ApiRequest from "../../lib/ApiRequest";
+import ApiRequest from "../../common/lib/ApiRequest";
 
 export default class TestRequest extends ApiRequest
 {

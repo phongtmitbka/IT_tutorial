@@ -1,26 +1,26 @@
 <template>
     <div class="lesson">
-        <h1>Giới thiệu về CSS</h1>
-        <intro></intro>
-        <example></example>
-        <summary-lesson></summary-lesson>
-        <test></test>
-
+        <lesson-content :contents="contents"></lesson-content>
     </div>
 </template>
 
 <script>
-    import Example from '../../common/lesson/Example';
-    import Intro from '../../common/lesson/Intro';
-    import SummaryLesson from '../../common/lesson/Summary';
-    import Test from '../../common/lesson/Test';
+  import LessonContent from '../../../../common/components/lesson/LessonContent';
     export default {
         components: {
-            Example,
-            Intro,
-            SummaryLesson,
-            Test,
+          LessonContent
+        },
+      data() {
+        return {
+          action: 'normal',
+          contents: [
+            {type: 'intro', content: 'This tutorial teaches you everything about HTML.|This tutorial teaches you everything about HTML.|This tutorial teaches you everything about HTML.', id: 1},
+            {type: 'example', content: 'This tutorial teaches you everything about HTML.|This tutorial teaches you everything about HTML.|This tutorial teaches you everything about HTML.', id: 1},
+            {type: 'summary', content: 'This tutorial teaches you everything about HTML.|This tutorial teaches you everything about HTML.|This tutorial teaches you everything about HTML.', id: 2},
+            {type: 'test', content: 'This tutorial teaches you everything about HTML.|This tutorial teaches you everything about HTML.|This tutorial teaches you everything about HTML.', id: 1}
+          ],
         }
+      },
     }
 </script>
 

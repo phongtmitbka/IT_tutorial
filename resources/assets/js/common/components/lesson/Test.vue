@@ -1,0 +1,123 @@
+<template>
+    <div class="test">
+        <h2>Test <span v-if="action == 'edit'" class="fa fa-edit" @click="edit()"></span>
+        </h2>
+        <hr>
+        <div v-for="(question, index) in questions" class="question">
+            <template v-if="status == 'normal'">
+                <h3>{{ index + 1 }}. {{ question.qs }} </h3>
+
+                <h4><input type="radio" name="q1">
+                    A. {{ question.a }}
+                </h4>
+                <h4><input type="radio" name="q1">
+                    B. {{ question.b }}
+                </h4>
+                <h4><input type="radio" name="q1">
+                    C. {{ question.c }}
+                </h4>
+                <h4><input type="radio" name="q1">
+                    D. {{ question.d }}
+                </h4>
+            </template>
+            <template v-else>
+                <h3>Question {{ index + 1 }}.<span class="fa fa-trash" @click="delRow(index)"></span> </h3>
+                <span>Question</span><input type="text" class="form-control input" v-model="questions[index].qs" placeholder="Please enter question content ...">
+                <span>Answer A.</span><input type="text" class="form-control input" v-model="questions[index].a" placeholder="Please enter answer A content ...">
+                <span>Answer B.</span><input type="text" class="form-control input" v-model="questions[index].b" placeholder="Please enter answer B content ...">
+                <span>Answer C.</span><input type="text" class="form-control input" v-model="questions[index].c" placeholder="Please enter answer C content ...">
+                <span>Answer D.</span><input type="text" class="form-control input" v-model="questions[index].d" placeholder="Please enter answer D content ...">
+            </template>
+            <hr>
+        </div>
+        <div class="clearfix"></div>
+        <template v-if="status != 'normal'">
+            <button type="button" class="btn btn-primary btn-add" title="Add new row" @click="addRow()"> <span class="fa fa-plus fa-2x"></span> </button>
+            <button type="button" v-if="status != 'normal'" class="btn btn-primary btn-save" title="Save"  @click="save()">Save</button>
+        </template>
+    </div>
+</template>
+<script>
+  import rs from '../../../common/lib/RequestStore';
+  export default {
+    props: ['content','action'],
+    data() {
+      return {
+        questions: [],
+        status: this.action,
+      }
+    },
+    methods: {
+      getData(id) {
+        rs.getRequest('LessonRequest').getLessonContent({type: 'Test', id: id}).then(res => {
+          if (res.content) {
+            this.questions = res.content.split('<?>');
+            this.questions = this.questions.map(function (item) {
+              return {qs: item.split('<aws>')[0], a: item.split('<aws>')[1], b: item.split('<aws>')[2], c: item.split('<aws>')[3], d: item.split('<aws>')[4]};
+            });
+          }
+        });
+      },
+      delRow(index) {
+        this.questions.splice(index, 1);
+      },
+      addRow() {
+        this.questions.push({qs: '', a: '', b: '', c: '', d: ''});
+      },
+      edit() {
+        this.showInput = true;
+        this.status = 'edit';
+      },
+      save() {
+        this.questions = this.questions.map(function (question) {
+          return Object.values(question).join('<aws>');
+        });
+        let params = {
+          type: 'Test',
+          id: this.content.id,
+          content: this.questions.join('<?>'),
+        };
+        rs.getRequest('LessonRequest').updateLessonContent(params).then(res => {
+          if (res.content) {
+            this.questions = res.content.split('<?>');
+            this.questions = this.questions.map(function (item) {
+              return {qs: item.split('<aws>')[0], a: item.split('<aws>')[1], b: item.split('<aws>')[2], c: item.split('<aws>')[3], d: item.split('<aws>')[4]};
+            });
+            this.content.id = res.id;
+          }
+        });
+        this.status = 'normal';
+      }
+    },
+    mounted() {
+      this.getData(this.content.id);
+    }
+  }
+</script>
+<style lang="scss" scoped>
+    .test {
+        min-height: 300px;
+        background: #dae7fb;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 20px;
+        .question {
+            margin: 20px 10px;
+            h5 {
+                margin: 0 30px;
+            }
+        }
+        .question {
+            .fa-trash {
+                cursor: pointer;
+                float: right;
+            }
+            input {
+                margin: 5px 0;
+            }
+        }
+        .btn-save {
+            padding: 10px 20px;
+        }
+    }
+</style>

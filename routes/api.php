@@ -14,5 +14,14 @@ use Illuminate\Http\Request;
 */
 
 Route::group(['middleware' => 'api'], function () {
-    Route::get('/test', 'Controller@test');
+    Route::get('/lesson', 'LessonController@getLesson');
+    Route::post('/lesson', 'LessonController@updateLesson');
+    Route::delete('/lesson', 'LessonController@deleteLesson');
+    Route::get('/lessons', 'LessonController@getListLesson');
+    Route::get('/content', 'LessonController@getLessonContent');
+    Route::post('/lesson-content', 'LessonController@updateLessonContent');
+
+    Route::get('/courses', 'CourseController@getListCourses');
+    Route::get('/course', 'CourseController@getCourse');
+    Route::post('/course', 'CourseController@updateCourse');
 });

@@ -16,7 +16,7 @@
     import Navigation from './layouts/Navigation';
     import BreadeCrumb from './layouts/BreadeCrumb';
     import AppFooter from './layouts/Footer';
-    import rs from '../../lib/RequestStore';
+    import rs from '../../common/lib/RequestStore';
     export default {
         components: {
             AppHeader,
@@ -30,9 +30,6 @@
           }
         },
         mounted() {
-            rs.getRequest('TestRequest').getTest().then(res => {
-
-            });
         }
     }
 </script>

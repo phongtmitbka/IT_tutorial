@@ -1,7 +1,9 @@
-import TestRequest from '../home/requests/TestRequest';
+import LessonRequest from '../../manager/requests/LessonRequest';
+import CourseRequest from '../../manager/requests/CourseRequest';
 
 const requestMap = {
-    TestRequest
+  LessonRequest,
+  CourseRequest
 }
 
 const instances = {};
