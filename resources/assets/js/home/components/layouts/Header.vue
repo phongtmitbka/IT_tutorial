@@ -7,6 +7,15 @@
             <a href="https://www.facebook.com" target="_blank">
                 <i class="fa fa-facebook fa-1x"></i>
             </a>
+            <a href="/login">
+                <i class="fa fa-sign-in fa-1x"></i> Đăng nhập
+            </a>
+            <a href="/register">
+                <i class="fa fa-sign-up fa-1x"></i>
+            </a>
+            <a href="/logout">
+                <i class="fa fa-sign-out fa-1x"></i> Đăng xuất
+            </a>
         </div>
         <div class="header-bottom">
             <div class="logo">

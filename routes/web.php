@@ -10,6 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
+Route::get('/logout', function (){
+    Auth::logout();
+   return redirect('/');
+});
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/{view?}', function () {
