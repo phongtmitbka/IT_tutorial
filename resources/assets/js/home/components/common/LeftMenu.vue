@@ -1,80 +1,75 @@
 <template>
     <div class="left-menu">
         <div v-if="$route.name != 'home'">
-            <div class="title">CSS cơ bản</div>
+            <div class="title">
+                <router-link :to="{ name: 'about-course', params: {course: course} }">{{ this.courseName }}</router-link>
+            </div>
             <ul>
-                <li><router-link to="/course/lesson">Mở đầu</router-link></li>
-                <li><router-link to="/course/lesson">Cài đặt môi trường</router-link></li>
-                <li><router-link to="/course/lesson">Viết chương trình đầu tiên</router-link></li>
-                <li><router-link to="/course/lesson">Mở đầu</router-link></li>
-                <li><router-link to="/course/lesson">Cài đặt môi trường</router-link></li>
-                <li><router-link to="/course/lesson">Viết chương trình đầu tiên</router-link></li>
-                <li><router-link to="/course/lesson">Mở đầu</router-link></li>
-                <li><router-link to="/course/lesson">Cài đặt môi trường</router-link></li>
-                <li><router-link to="/course/lesson">Viết chương trình đầu tiên</router-link></li>
-                <li><router-link to="/course/lesson">Mở đầu</router-link></li>
-                <li><router-link to="/course/lesson">Cài đặt môi trường</router-link></li>
-                <li><router-link to="/course/lesson">Viết chương trình đầu tiên</router-link></li>
-                <li><router-link to="/course/lesson">Mở đầu</router-link></li>
-                <li><router-link to="/course/lesson">Cài đặt môi trường</router-link></li>
-                <li><router-link to="/course/lesson">Viết chương trình đầu tiên</router-link></li>
-                <li><router-link to="/course/lesson">Mở đầu</router-link></li>
-                <li><router-link to="/course/lesson">Cài đặt môi trường</router-link></li>
-                <li><router-link to="/course/lesson">Viết chương trình đầu tiên</router-link></li>
-                <li><router-link to="/course/lesson">Mở đầu</router-link></li>
-                <li><router-link to="/course/lesson">Cài đặt môi trường</router-link></li>
-                <li><router-link to="/course/lesson">Viết chương trình đầu tiên</router-link></li>
-                <li><router-link to="/course/lesson">Mở đầu</router-link></li>
-                <li><router-link to="/course/lesson">Cài đặt môi trường</router-link></li>
-                <li><router-link to="/course/lesson">Viết chương trình đầu tiên</router-link></li>
-                <li><router-link to="/course/lesson">Mở đầu</router-link></li>
-                <li><router-link to="/course/lesson">Cài đặt môi trường</router-link></li>
-                <li><router-link to="/course/lesson">Viết chương trình đầu tiên</router-link></li>
-                <li><router-link to="/course/lesson">Mở đầu</router-link></li>
-                <li><router-link to="/course/lesson">Cài đặt môi trường</router-link></li>
-                <li><router-link to="/course/lesson">Viết chương trình đầu tiên</router-link></li>
-            </ul>
-            <div class="title">Test</div>
-            <ul>
-                <li><router-link to="/course/lesson">Test 1</router-link></li>
+                <li v-for="lesson in lessons"><router-link :to="{ name: 'lesson', params: {course: course, lesson: lesson.lesson_number} }">{{ lesson.title }}</router-link></li>
             </ul>
         </div>
         <div v-else>
             <div class="title">PHP</div>
             <ul>
-                <li><router-link to="/course">PHP cơ bản</router-link></li>
-                <li><router-link to="/course">PHP nâng cao</router-link></li>
-                <li><router-link to="/course">PHP regular expression</router-link></li>
-                <li><router-link to="/course">Laravel framework</router-link></li>
-                <li><router-link to="/course">Codeigniter</router-link></li>
+                <li v-for="course in coursesPhps"><router-link :to="{ name: 'about-course', params: {course: course.url} }">{{ course.name }}</router-link></li>
             </ul>
             <div class="title">HTML - CSS</div>
             <ul>
-                <li><router-link to="/course">HTML</router-link></li>
-                <li><router-link to="/course">HTML5</router-link></li>
-                <li><router-link to="/course">CSS</router-link></li>
-                <li><router-link to="/course">CSS3</router-link></li>
-                <li><router-link to="/course">Bootstrap</router-link></li>
+                <li v-for="course in courseHtmlCss"><router-link :to="{ name: 'about-course', params: {course: course.url} }">{{ course.name }}</router-link></li>
             </ul>
             <div class="title">Javascript</div>
             <ul>
-                <li><router-link to="/course">Javascript cơ bản</router-link></li>
-                <li><router-link to="/course">Javascript nâng cao</router-link></li>
-                <li><router-link to="/course">ES6</router-link></li>
-                <li><router-link to="/course">Typescript</router-link></li>
-                <li><router-link to="/course">AngularJS</router-link></li>
-                <li><router-link to="/course">VueJS</router-link></li>
-                <li><router-link to="/course">ReactJS</router-link></li>
-                <li><router-link to="/course">NodeJS</router-link></li>
+                <li v-for="course in courseJs"><router-link :to="{ name: 'about-course', params: {course: course.url} }">{{ course.name }}</router-link></li>
             </ul>
         </div>
     </div>
 </template>
 <script>
-    export default {
-      mounted() {
+  import rs from '../../../common/lib/RequestStore';
+  export default {
+    data() {
+      return {
+        lessons: [],
+        course: this.$route.params.course,
+        courseName: '',
+        coursesPhps: '',
+        courseHtmlCss: '',
+        courseJs: '',
       }
+    },
+    methods: {
+      getData() {
+        let params = {
+          course: this.course,
+        };
+        if (this.$route.name != 'home') {
+          rs.getRequest('LessonRequest').getListLesson(params).then(res => {
+            this.lessons = res;
+          });
+          rs.getRequest('CourseRequest').getCourse(params).then(res => {
+            this.courseName = res.name;
+          });
+        } else {
+          this.getCourseByType();
+
+        }
+      },
+      getCourseByType() {
+        rs.getRequest('CourseRequest').getGroupCourse({ type: 1}).then(res => {
+            this.coursesPhps = res;
+        });
+        rs.getRequest('CourseRequest').getGroupCourse({ type: 2}).then(res => {
+          this.courseHtmlCss = res;
+        });
+        rs.getRequest('CourseRequest').getGroupCourse({ type: 3}).then(res => {
+          this.courseJs = res;
+        });
+      }
+    },
+    mounted() {
+      this.getData();
     }
+  }
 </script>
 <style lang="scss" scoped>
     .left-menu {
@@ -89,10 +84,13 @@
             font-weight: bold;
             font-size: 20px;
             background: #424265;
-            color: #ffffff;
             height: 50px;
             line-height: 50px;
             padding: 0 10px;
+            color: #ffffff;
+            a {
+                color: #ffffff;
+            }
         }
         ul {
             list-style: none;

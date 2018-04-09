@@ -3,28 +3,37 @@
         <div v-for="course in courses" class="about">
             <div class="box-title">
                 <div class="title">
-                    {{ course }}
+                    {{ course.name }}
                 </div>
                 <div class="start">
-                    <router-link :to="'/course/' + course + '/lesson/0'">{{ $t('start')}} >></router-link>
+                    <router-link :to="{ name: 'about-course', params: {course: course.url} }">{{ $t('start')}} >></router-link>
                 </div>
             </div>
             <div class="description">
-                PHP là một ngôn ngữ lập trình phía Server dùng để xây dựng các ứng dụng Website.
-                Điểm mạnh của PHP là tính cộng đồng của nó cao, nghĩa là trên thế giới có khá nhiều lập trình viên sử dụng PHP để xây dựng dự án cho riêng họ hoặc cho khách hàng của họ.
-                Ngoài ra một điểm mạnh nữa của PHP đó là có khá nhiều CMS, Framework được xây dựng từ PHP giúp rút gọn quá trình tạo một website, vì vậy có khá nhiều lập trình viên lựa chọn ngôn ngữ này.
+                {{ course.about }}
             </div>
         </div>
     </div>
 </template>
 <script>
-    export default {
-      data() {
-        return {
-          courses: ['php-basic', 'php-advance', 'html', 'css']
-        }
+  import rs from '../../../common/lib/RequestStore';
+  export default {
+    data() {
+      return {
+        courses: [],
       }
+    },
+    methods: {
+      getCourses() {
+        rs.getRequest('CourseRequest').getCourses().then(res => {
+          this.courses = res;
+        });
+      }
+    },
+    mounted() {
+      this.getCourses();
     }
+  }
 </script>
 <style lang="scss">
     .about-course {

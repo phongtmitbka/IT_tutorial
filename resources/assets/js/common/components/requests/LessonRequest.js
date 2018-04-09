@@ -1,4 +1,4 @@
-import BaseRequest from "../../common/lib/BaseRequest";
+import BaseRequest from "../../lib/BaseRequest";
 
 export default class LessonRequest extends BaseRequest
 {

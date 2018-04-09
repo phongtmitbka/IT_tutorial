@@ -7,19 +7,7 @@
         <textarea name="content" class="content" v-model="exampleContent" :readonly="status == 'normal'">
         </textarea>
         <div class="excute">
-            <select name="option" class="btn btn-option">
-                <option value="">Full width</option>
-                <option value="">Iphone 7</option>
-                <option value="">Iphone 8</option>
-                <option value="">Galaxy S6</option>
-                <option value="">Galaxy S7</option>
-                <option value="">Galaxy S8</option>
-            </select>
-            <button class="btn btn-primary">Run</button>
-        </div>
-        <div class="excute-content">
-            <iframe src="" frameborder="0">
-            </iframe>
+            <a href="/" target="_blank" class="btn btn-primary">Try It Yourself</a>
         </div>
     </div>
 </template>
@@ -80,16 +68,8 @@
         .excute {
             height: 70px;
             line-height: 70px;
-            .btn-option {
-                background: #c1d2c5;
-                padding: 10px 10px;
-            }
-        }
-        .excute-content {
-            background: #ffffff;
-            iframe {
-                width: 100%;
-                min-height: 500px;
+            .btn {
+                width: 150px;
             }
         }
     }

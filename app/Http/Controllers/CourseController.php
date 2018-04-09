@@ -23,4 +23,10 @@ class CourseController extends Controller
         $course->save();
         return response()->json($course);
     }
+
+    public function getGroupCourse(Request $request)
+    {
+        $courses = Course::where('type', $request->input('type'))->get();
+        return response()->json($courses);
+    }
 }

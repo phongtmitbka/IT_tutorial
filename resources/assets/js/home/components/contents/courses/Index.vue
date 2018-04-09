@@ -3,10 +3,6 @@
         <left-menu></left-menu>
         <div class="course-body">
             <router-view></router-view>
-            <div class="button-area">
-                <button type="button" class="btn btn-preview">Preview</button>
-                <button type="button" class="btn btn-primary btn-next">Next</button>
-            </div>
             <div class="clear"></div>
         </div>
     </div>

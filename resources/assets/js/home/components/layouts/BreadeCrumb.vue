@@ -1,7 +1,7 @@
 <template>
     <div class="breadcrumb">
         <ul>
-            <li><a href="#">{{ $t('home') }}</a> </li>
+            <li><router-link to="/">{{ $t('home') }}</router-link> </li>
             <li><a href="#">{{ $t('course') }}</a> </li>
             <li><a href="#">PHP cơ bản</a> </li>
             <li class="lang vi"><router-link to="?lang=vi">VI</router-link></li>

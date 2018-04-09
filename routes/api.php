@@ -24,4 +24,5 @@ Route::group(['middleware' => 'api'], function () {
     Route::get('/courses', 'CourseController@getListCourses');
     Route::get('/course', 'CourseController@getCourse');
     Route::post('/course', 'CourseController@updateCourse');
+    Route::get('/group-course', 'CourseController@getGroupCourse');
 });

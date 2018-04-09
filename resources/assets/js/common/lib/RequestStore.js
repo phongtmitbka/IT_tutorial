@@ -1,5 +1,5 @@
-import LessonRequest from '../../manager/requests/LessonRequest';
-import CourseRequest from '../../manager/requests/CourseRequest';
+import LessonRequest from '../components/requests/LessonRequest';
+import CourseRequest from '../components/requests/CourseRequest';
 
 const requestMap = {
   LessonRequest,

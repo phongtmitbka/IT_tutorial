@@ -1,4 +1,4 @@
-import BaseRequest from "../../common/lib/BaseRequest";
+import BaseRequest from "../../lib/BaseRequest";
 
 export default class CourseRequest extends BaseRequest
 {
@@ -13,5 +13,9 @@ export default class CourseRequest extends BaseRequest
   updateCourse(params) {
     let url = '/api/course';
     return this.post(url, params);
+  }
+  getGroupCourse(params) {
+    let url = '/api/group-course';
+    return this.get(url, params);
   }
 }

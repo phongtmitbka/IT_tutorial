@@ -4,7 +4,7 @@
         <navigation></navigation>
         <breade-crumb></breade-crumb>
         <div id="content">
-            <router-view></router-view>
+            <router-view :key="$route.fullPath"></router-view>
         </div>
         <div class="clearfix"></div>
         <app-footer></app-footer>
