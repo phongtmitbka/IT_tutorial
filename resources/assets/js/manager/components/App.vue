@@ -2,6 +2,7 @@
     <div class="container">
         <app-header></app-header>
         <navigation></navigation>
+        <bread-crumb></bread-crumb>
         <div id="content">
             <router-view :key="$route.fullPath"></router-view>
         </div>
@@ -10,14 +11,16 @@
     </div>
 </template>
 <script>
-    import AppHeader from './layouts/Header';
+    import AppHeader from '../../common/components/layouts/Header';
     import Navigation from './layouts/Navigation';
-    import AppFooter from './layouts/Footer';
+    import AppFooter from '../../common/components/layouts/Footer';
+    import BreadCrumb from './layouts/BreadCrumb';
     export default {
       components: {
         AppHeader,
         Navigation,
-        AppFooter
+        AppFooter,
+        BreadCrumb
       }
     }
 </script>

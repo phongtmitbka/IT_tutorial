@@ -1,8 +1,10 @@
 <template>
     <div class="lesson">
+        <h1>{{ title ? title : 'Bai hoc khon ton tai' }}</h1>
+        <hr>
         <lesson-content :contents="contents" :action="'normal'"></lesson-content>
         <div class="button-area">
-            <template>
+            <template v-if="title">
                 <router-link v-if="this.$route.params.lesson > 1" class="btn btn-preview" :to="{ name: 'lesson', params: {course: this.$route.params.course, lesson: this.$route.params.lesson -1 } }">Preview</router-link>
                 <router-link v-if="this.$route.params.lesson < length" class="btn btn-primary btn-right" :to="{ name: 'lesson', params: {course: this.$route.params.course, lesson: parseInt(this.$route.params.lesson) + 1 } }">Next</router-link>
             </template>

@@ -7,27 +7,52 @@
             <a href="https://www.facebook.com" target="_blank">
                 <i class="fa fa-facebook fa-1x"></i>
             </a>
-            <a href="/login">
-                <i class="fa fa-sign-in fa-1x"></i> Đăng nhập
-            </a>
-            <a href="/register">
-                <i class="fa fa-sign-up fa-1x"></i>
-            </a>
-            <a href="/logout">
-                <i class="fa fa-sign-out fa-1x"></i> Đăng xuất
-            </a>
+            <template v-if="Object.keys(currentUser).length">
+                <a href="/logout">
+                    <i class="fa fa-sign-out fa-1x"></i> Đăng xuất
+                </a>
+                <a href="/mypage">
+                    {{ currentUser.name }}
+                </a>
+            </template>
         </div>
         <div class="header-bottom">
-            <div class="logo">
-                <router-link to="/">Web Tutorial</router-link>
-            </div>
-            <h3>Lập trình viên là 1 công việc rất ổn định - nghèo ổn định !</h3>
+            <template v-if="$route.fullPath.split('/')[1] == 'manager'">
+                <div class="logo">
+                    <router-link to="/manager">Web Tutorial</router-link>
+                </div>
+                <h3>Quan ly khoa hoc</h3>
+            </template>
+            <template v-else-if="$route.fullPath.split('/')[1] == 'admin'">
+                <div class="logo">
+                    <router-link to="/admin">Web Tutorial</router-link>
+                </div>
+                <h3>Quan tri website</h3>
+            </template>
+            <template v-else>
+                <div class="logo">
+                    <router-link to="/">Web Tutorial</router-link>
+                </div>
+                <h3>Web tutorial</h3>
+            </template>
         </div>
     </div>
 </template>
 
 <script>
-
+  import rs from '../../../common/lib/RequestStore';
+  export default {
+    data() {
+      return {
+        currentUser: {},
+      }
+    },
+    mounted() {
+      rs.getRequest('UserRequest').getCurrentUser().then(res => {
+        this.currentUser = res;
+      });
+    }
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -37,6 +62,9 @@
             height: 30px;
             background: #443636;
             line-height: 30px;
+            .name {
+                color: #ffffff;
+            }
             a {
                 float: right;
                 color: #ffffff;

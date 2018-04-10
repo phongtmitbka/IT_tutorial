@@ -11,7 +11,7 @@ const messages = message;
 
 // Create VueI18n instance with options
 const i18n = new VueI18n({
-  locale: 'en', // set locale
+  locale: 'vi', // set locale
   messages, // set locale messages
 });
 const router = new VueRouter(Routers);

@@ -1,13 +1,13 @@
 <template>
     <div class="lesson">
         <h1 v-if="!this.$route.params.lesson">Thêm bài học mới</h1>
-        <div v-else>
+        <div v-else-if="title">
             <div class="fa fa-edit fa-3x" @click="action='edit'"></div>
             <div class="fa fa-trash fa-3x" @click="del()"></div>
         </div>
         <h1>
             <input v-if="action != 'normal'" type="text" v-model="title" class="form-control" placeholder="Please enter title ...">
-            <span v-else>{{ title ? title : 'No title' }}</span>
+            <span v-else>{{ title ? title : 'Bai hoc khon ton tai' }}</span>
         </h1>
         <hr>
         <lesson-content :contents="contents" :action="action"></lesson-content>
@@ -15,7 +15,7 @@
             <template v-if="action == 'add' || action == 'edit'">
                 <button type="button" class="btn btn-primary btn-right" @click="save()">Save</button>
             </template>
-            <template v-else>
+            <template v-else-if="title">
                 <router-link v-if="this.$route.params.lesson > 1" class="btn btn-preview" :to="{ name: 'lesson', params: {course: this.$route.params.course, lesson: this.$route.params.lesson -1 } }">Preview</router-link>
                 <router-link v-if="this.$route.params.lesson < length" class="btn btn-primary btn-right" :to="{ name: 'lesson', params: {course: this.$route.params.course, lesson: parseInt(this.$route.params.lesson) + 1 } }">Next</router-link>
             </template>

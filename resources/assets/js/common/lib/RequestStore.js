@@ -1,9 +1,11 @@
 import LessonRequest from '../components/requests/LessonRequest';
 import CourseRequest from '../components/requests/CourseRequest';
+import UserRequest from '../components/requests/UserRequest';
 
 const requestMap = {
   LessonRequest,
-  CourseRequest
+  CourseRequest,
+  UserRequest,
 }
 
 const instances = {};

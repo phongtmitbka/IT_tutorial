@@ -1,12 +1,10 @@
 <template>
     <div class="breadcrumb">
         <ul>
-            <li><router-link to="/">{{ $t('home') | breadCrumbLabel }}</router-link> </li>
+            <li><router-link to="/manager">Quan ly khoa hoc</router-link> </li>
             <li v-if="$route.params.course"><router-link :to="{ name: 'about-course', params: {course: $route.params.course} }">{{ $route.params.course | breadCrumbLabel }}</router-link> </li>
             <li v-if="$route.params.lesson"><router-link :to="{ name: 'lesson', params: {course: $route.params.course, lesson: $route.params.lesson} }">Lesson {{ $route.params.lesson }}</router-link> </li>
-            <li v-if="$route.name != 'home' && $route.name != 'lesson'"><router-link :to="{ name: 'about-course', params: {course: $route.params.course} }">{{ $route.name | breadCrumbLabel }}</router-link> </li>
-            <li class="lang vi"><router-link to="?lang=vi">VI</router-link></li>
-            <li class="lang en"><router-link to="?lang=en">EN</router-link></li>
+            <li v-if="$route.name != 'home' && $route.name != 'manager' && $route.name != 'admin' && $route.name != 'lesson'"><router-link to="#">{{ $route.name | breadCrumbLabel }}</router-link> </li>
         </ul>
     </div>
 </template>

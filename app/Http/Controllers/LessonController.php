@@ -33,7 +33,7 @@ class LessonController extends Controller
             $lesson = Lesson::where('course_id', $course_id)->where('lesson_number', $request->input('lesson_number'))->first();
         } else {
             $lesson = new Lesson();
-            $lesson->lesson_number = Lesson::max('lesson_number') + 1;
+            $lesson->lesson_number = Lesson::where('course_id', $course_id)->max('lesson_number') + 1;
         }
         try {
             $lesson->title = $request->input('title');
