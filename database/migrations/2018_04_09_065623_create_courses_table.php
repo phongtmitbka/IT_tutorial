@@ -19,6 +19,7 @@ class CreateCoursesTable extends Migration
             $table->text('about');
             $table->string('url');
             $table->tinyInteger('type');
+            $table->integer('total_view');
             $table->timestamps();
         });
     }

@@ -1,6 +1,6 @@
-import LessonRequest from '../components/requests/LessonRequest';
-import CourseRequest from '../components/requests/CourseRequest';
-import UserRequest from '../components/requests/UserRequest';
+import LessonRequest from '../requests/LessonRequest';
+import CourseRequest from '../requests/CourseRequest';
+import UserRequest from '../requests/UserRequest';
 
 const requestMap = {
   LessonRequest,

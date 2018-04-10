@@ -8,6 +8,7 @@
             <span v-if="status != 'normal'">
                 <input type="text" class="form-control input" v-model="rows[index]" placeholder="Please enter row content ...">
                 <button type="button" class="btn btn-primary btn-sub" title="Delete row" @click="delRow(index)"><span class="fa fa-trash fa-2x"></span> </button>
+                <span class="bg-warning" v-if="hasErrors && !rows[index]">The field is required</span>
             </span>
             <span v-else>
                 - {{ row }}
@@ -28,6 +29,7 @@
       return {
         rows: [],
         status: this.action,
+        hasErrors: false,
       }
     },
     methods: {
@@ -48,18 +50,23 @@
         this.status = 'edit';
       },
       save() {
-        let params = {
-          type: 'Summary',
-          id: this.content.id,
-          content: this.rows.join('|'),
-        };
-        rs.getRequest('LessonRequest').updateLessonContent(params).then(res => {
-          if (res.content) {
-            this.rows = res.content.split('|');
-            this.content.id = res.id;
-          }
-        });
-        this.status = 'normal';
+        if (!this.rows.includes('')) {
+          this.hasErrors = false;
+          let params = {
+            type: 'Summary',
+            id: this.content.id,
+            content: this.rows.join('|'),
+          };
+          rs.getRequest('LessonRequest').updateLessonContent(params).then(res => {
+            if (res.content) {
+              this.rows = res.content.split('|');
+              this.content.id = res.id;
+            }
+          });
+          this.status = 'normal';
+        } else {
+          this.hasErrors = true;
+        }
       }
     },
     mounted() {

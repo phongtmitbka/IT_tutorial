@@ -8,6 +8,7 @@
         <h1>
             <input v-if="action != 'normal'" type="text" v-model="title" class="form-control" placeholder="Please enter title ...">
             <span v-else>{{ title ? title : 'Bai hoc khon ton tai' }}</span>
+            <span class="bg-warning" v-if="hasErrors && !title">The title is required</span>
         </h1>
         <hr>
         <lesson-content :contents="contents" :action="action"></lesson-content>
@@ -38,6 +39,7 @@
         action: !this.$route.params.lesson ? 'add' : 'normal',
         contents: [],
         title: '',
+        hasErrors: false,
         length: 0,
       }
     },
@@ -55,20 +57,25 @@
         }
       },
       save() {
-        this.contents = this.contents.map(function (item) {
-          return Object.values(item).join('_');
-        });
-        let params = {
-          lesson_number: this.$route.params.lesson,
-          title: this.title,
-          course: this.$route.params.course,
-          lesson_content: this.contents.join(','),
-        };
-        rs.getRequest('LessonRequest').updateLesson(params).then(res => {
-          this.$router.push({ name: 'lesson', params: {course: this.$route.params.course, lesson: res.lesson_number} });
-          this.getContents();
-        });
-        this.action = 'normal';
+        if (this.title) {
+          this.contents = this.contents.map(function (item) {
+            return Object.values(item).join('_');
+          });
+          let params = {
+            lesson_number: this.$route.params.lesson,
+            title: this.title,
+            course: this.$route.params.course,
+            lesson_content: this.contents.join(','),
+          };
+          rs.getRequest('LessonRequest').updateLesson(params).then(res => {
+            this.$router.push({ name: 'lesson', params: {course: this.$route.params.course, lesson: res.lesson_number} });
+            this.getContents();
+          });
+          this.action = 'normal';
+          this.hasErrors = false;
+        } else {
+          this.hasErrors = true;
+        }
       },
       getContents(course = this.$route.params.course, lesson = this.$route.params.lesson) {
         this.contents = [];

@@ -1,4 +1,4 @@
-import BaseRequest from '../../lib/BaseRequest';
+import BaseRequest from '../lib/BaseRequest';
 
 export default class UserRequest extends BaseRequest
 {

@@ -5,9 +5,9 @@
                 <router-link to="#">Dashboard</router-link>
             </div>
             <ul>
-                <li><router-link to="#">Quan ly poster</router-link></li>
                 <li><router-link to="#">Quan ly khoa hoc</router-link></li>
-                <li><router-link to="#">Quan ly website</router-link></li>
+                <li><router-link to="#">Quan ly cộng tác viên</router-link></li>
+                <li><router-link to="#">Quan ly bài học</router-link></li>
             </ul>
         </div>
     </div>

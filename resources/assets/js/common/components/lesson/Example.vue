@@ -6,6 +6,7 @@
         <hr>
         <textarea name="content" class="content" v-model="exampleContent" :readonly="status == 'normal'">
         </textarea>
+        <span class="bg-warning" v-if="hasErrors && !exampleContent">The example content is required</span>
         <div class="excute">
             <a href="/" target="_blank" class="btn btn-primary">Try It Yourself</a>
         </div>
@@ -19,6 +20,7 @@
       return {
         status: this.action,
         exampleContent: '',
+        hasErrors: false,
       }
     },
     methods: {
@@ -33,18 +35,23 @@
         this.status = 'edit';
       },
       save() {
-        let params = {
-          type: 'Example',
-          id: this.content.id,
-          content: this.exampleContent,
-        };
-        rs.getRequest('LessonRequest').updateLessonContent(params).then(res => {
-          if (res.content) {
-            this.exampleContent = res.content;
-            this.content.id = res.id;
-          }
-        });
-        this.status = 'normal';
+        if (!this.exampleContent) {
+          this.hasErrors = true;
+        } else  {
+          let params = {
+            type: 'Example',
+            id: this.content.id,
+            content: this.exampleContent,
+          };
+          rs.getRequest('LessonRequest').updateLessonContent(params).then(res => {
+            if (res.content) {
+              this.exampleContent = res.content;
+              this.content.id = res.id;
+            }
+          });
+          this.status = 'normal';
+          this.hasErrors = false;
+        }
       }
     },
     mounted() {

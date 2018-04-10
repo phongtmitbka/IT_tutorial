@@ -5,7 +5,7 @@
                 <router-link :to="{ name: 'about-course', params: {course: course} }">{{ this.courseName }}</router-link>
             </div>
             <ul>
-                <li v-for="lesson in lessons"><router-link :to="{ name: 'lesson', params: {course: course, lesson: lesson.lesson_number} }">{{ lesson.title }}</router-link></li>
+                <li v-for="lesson in lessons" :class="{ active: lesson.lesson_number == $route.params.lesson }"><router-link :to="{ name: 'lesson', params: {course: course, lesson: lesson.lesson_number} }">{{ lesson.title }}</router-link></li>
             </ul>
         </div>
         <div v-else>
@@ -100,6 +100,12 @@
                 line-height: 38px;
                 border: 1px solid #fff8f8;
                 padding: 0 5px;
+                &:hover {
+                    background: #dcd3d3;
+                }
+            }
+            .active {
+                background: #dcd3d3;
             }
         }
     }

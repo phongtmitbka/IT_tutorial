@@ -23,10 +23,15 @@
             <template v-else>
                 <h3>Question {{ index + 1 }}.<span class="fa fa-trash" @click="delRow(index)"></span> </h3>
                 <span>Question</span><input type="text" class="form-control input" v-model="questions[index].qs" placeholder="Please enter question content ...">
+                <span class="bg-warning" v-if="hasErrors && !questions[index].qs">The field is required</span><br>
                 <span>Answer A.</span><input type="text" class="form-control input" v-model="questions[index].a" placeholder="Please enter answer A content ...">
+                <span class="bg-warning" v-if="hasErrors && !questions[index].a">The field is required</span><br>
                 <span>Answer B.</span><input type="text" class="form-control input" v-model="questions[index].b" placeholder="Please enter answer B content ...">
+                <span class="bg-warning" v-if="hasErrors && !questions[index].b">The field is required</span><br>
                 <span>Answer C.</span><input type="text" class="form-control input" v-model="questions[index].c" placeholder="Please enter answer C content ...">
+                <span class="bg-warning" v-if="hasErrors && !questions[index].c">The field is required</span><br>
                 <span>Answer D.</span><input type="text" class="form-control input" v-model="questions[index].d" placeholder="Please enter answer D content ...">
+                <span class="bg-warning" v-if="hasErrors && !questions[index].d">The field is required</span>
             </template>
             <hr>
         </div>
@@ -45,6 +50,7 @@
       return {
         questions: [],
         status: this.action,
+        hasErrors: false,
       }
     },
     methods: {
@@ -69,24 +75,31 @@
         this.status = 'edit';
       },
       save() {
-        this.questions = this.questions.map(function (question) {
-          return Object.values(question).join('<aws>');
-        });
-        let params = {
-          type: 'Test',
-          id: this.content.id,
-          content: this.questions.join('<?>'),
-        };
-        rs.getRequest('LessonRequest').updateLessonContent(params).then(res => {
-          if (res.content) {
-            this.questions = res.content.split('<?>');
-            this.questions = this.questions.map(function (item) {
-              return {qs: item.split('<aws>')[0], a: item.split('<aws>')[1], b: item.split('<aws>')[2], c: item.split('<aws>')[3], d: item.split('<aws>')[4]};
-            });
-            this.content.id = res.id;
+        for (let i = 0; i < this.questions.length; i++) {
+          if (Object.values(this.questions[i]).includes('')) {
+            return this.hasErrors = true;
           }
-        });
-        this.status = 'normal';
+        }
+        if (this.hasErrors) {
+          this.questions = this.questions.map(function (question) {
+            return Object.values(question).join('<aws>');
+          });
+          let params = {
+            type: 'Test',
+            id: this.content.id,
+            content: this.questions.join('<?>'),
+          };
+          rs.getRequest('LessonRequest').updateLessonContent(params).then(res => {
+            if (res.content) {
+              this.questions = res.content.split('<?>');
+              this.questions = this.questions.map(function (item) {
+                return {qs: item.split('<aws>')[0], a: item.split('<aws>')[1], b: item.split('<aws>')[2], c: item.split('<aws>')[3], d: item.split('<aws>')[4]};
+              });
+              this.content.id = res.id;
+            }
+          });
+          this.status = 'normal';
+        }
       }
     },
     mounted() {

@@ -7,6 +7,7 @@
 </template>
 <style lang="scss" scoped>
     .comment-facebook {
-        padding: 30px;
+        float: right;
+        margin-right: 20px;
     }
 </style>
