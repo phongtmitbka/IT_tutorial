@@ -4,9 +4,6 @@
             <li>
                 <router-link to="/manager">Quản lý khóa học</router-link>
             </li>
-            <li>
-                <router-link to="/manager/qa">Hỏi đáp</router-link>
-            </li>
             <li></li>
         </ul>
     </div>

@@ -5,6 +5,7 @@
         <bread-crumb></bread-crumb>
         <div id="content">
             <router-view :key="$route.fullPath"></router-view>
+            <comment-facebook></comment-facebook>
         </div>
         <div class="clearfix"></div>
         <app-footer></app-footer>
@@ -15,12 +16,14 @@
     import Navigation from './layouts/Navigation';
     import AppFooter from '../../common/components/layouts/Footer';
     import BreadCrumb from './layouts/BreadCrumb';
+    import CommentFacebook from '../../common/components/layouts/CommentFacebook';
     export default {
       components: {
         AppHeader,
         Navigation,
         AppFooter,
-        BreadCrumb
+        BreadCrumb,
+        CommentFacebook,
       }
     }
 </script>

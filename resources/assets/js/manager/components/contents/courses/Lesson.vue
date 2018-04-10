@@ -20,6 +20,8 @@
                 <router-link v-if="this.$route.params.lesson < length" class="btn btn-primary btn-right" :to="{ name: 'lesson', params: {course: this.$route.params.course, lesson: parseInt(this.$route.params.lesson) + 1 } }">Next</router-link>
             </template>
         </div>
+        <div class="clearfix"></div>
+        <hr>
     </div>
 </template>
 

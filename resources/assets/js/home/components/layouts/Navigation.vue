@@ -8,9 +8,6 @@
                 <router-link to="/about">{{ $t('about') | toUpper}}</router-link>
             </li>
             <li>
-                <router-link to="/qa">{{ $t('qa') | toUpper }}</router-link>
-            </li>
-            <li>
                 <input type="text" class="form-control" :placeholder="$t('searchPlaceHolder')">
                 <button class="btn btn-primary">{{ $t("search") }}</button>
             </li>

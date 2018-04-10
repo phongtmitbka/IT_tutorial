@@ -1,7 +1,6 @@
 import Home from './components/contents/Home';
 import About from './components/contents/About';
 import AboutCourse from '../common/components/lesson/About';
-import QA from './components/contents/QA';
 import Index from './components/contents/courses/Index';
 import Lesson from './components/contents/courses/Lesson';
 import NotFound from './components/NotFound';
@@ -36,11 +35,6 @@ export default {
             name: 'about',
             path: '/about',
             component: About,
-        },
-        {
-            name: 'qa',
-            path: '/qa',
-            component: QA,
         },
         {path: '*', component: NotFound}
     ]

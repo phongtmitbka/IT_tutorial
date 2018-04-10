@@ -28,7 +28,6 @@
         <br>
     </div>
 </template>
-
 <script>
     import Vue from 'vue';
   import Example from './Example';

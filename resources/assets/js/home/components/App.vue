@@ -5,6 +5,7 @@
         <bread-crumb></bread-crumb>
         <div id="content">
             <router-view :key="$route.fullPath"></router-view>
+            <comment-facebook></comment-facebook>
         </div>
         <div class="clearfix"></div>
         <app-footer></app-footer>
@@ -16,13 +17,14 @@
     import Navigation from './layouts/Navigation';
     import BreadCrumb from './layouts/BreadCrumb';
     import AppFooter from '../../common/components/layouts/Footer';
-    import rs from '../../common/lib/RequestStore';
+    import CommentFacebook from '../../common/components/layouts/CommentFacebook';
     export default {
         components: {
             AppHeader,
             Navigation,
             AppFooter,
             BreadCrumb,
+            CommentFacebook,
         },
         watch: {
           '$route.query.lang': function () {

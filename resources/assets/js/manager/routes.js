@@ -1,5 +1,4 @@
 import Home from './components/contents/Home';
-import QA from './components/contents/QA';
 import Index from './components/contents/courses/Index';
 import Lesson from './components/contents/courses/Lesson';
 import About from '../common/components/lesson/About';
@@ -11,11 +10,6 @@ export default {
       name: 'manager',
       path: '/manager',
       component: Home,
-    },
-    {
-      name: 'qa',
-      path: '/manager/qa',
-      component: QA,
     },
     {
       name: 'course',
