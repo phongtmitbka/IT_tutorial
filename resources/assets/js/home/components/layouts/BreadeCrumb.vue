@@ -1,15 +1,32 @@
 <template>
     <div class="breadcrumb">
         <ul>
-            <li><router-link to="/">{{ $t('home') }}</router-link> </li>
-            <li><a href="#">{{ $t('course') }}</a> </li>
-            <li><a href="#">PHP cơ bản</a> </li>
+            <li><router-link to="/">{{ $t('home') | breadCrumbLabel }}</router-link> </li>
+            <li v-if="$route.params.course"><router-link :to="{ name: 'about-course', params: {course: $route.params.course} }">{{ $route.params.course | breadCrumbLabel }}</router-link> </li>
+            <li v-if="$route.params.lesson"><router-link :to="{ name: 'lesson', params: {course: $route.params.course, lesson: $route.params.lesson} }">Lesson {{ $route.params.lesson }}</router-link> </li>
+            <li v-if="$route.name != 'home' && $route.name != 'lesson'"><router-link :to="{ name: 'about-course', params: {course: $route.params.course} }">{{ $route.name | breadCrumbLabel }}</router-link> </li>
             <li class="lang vi"><router-link to="?lang=vi">VI</router-link></li>
             <li class="lang en"><router-link to="?lang=en">EN</router-link></li>
         </ul>
     </div>
 </template>
+<script>
+    export default {
+      data() {
+        return {
 
+        }
+      },
+      filters: {
+        breadCrumbLabel(val) {
+          val = val.toString().split('-').map(function (item) {
+            return item.toUpperCase();
+          });
+          return val.join(' ');
+        }
+      }
+    }
+</script>
 <style lang="scss" scoped>
     .breadcrumb {
         background: transparent;
