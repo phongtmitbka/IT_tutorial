@@ -15,7 +15,8 @@ class CreateSummariesTable extends Migration
     {
         Schema::create('summaries', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('content');
+            $table->text('title');
+            $table->text('content')->nullable();
             $table->timestamps();
         });
     }

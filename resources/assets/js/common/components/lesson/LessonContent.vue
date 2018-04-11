@@ -17,10 +17,10 @@
         </div>
         <div v-if="action == 'add' || action == 'edit'">
             <div>
-                <button type="button" class="btn btn-dark btn-add" title="Add new" @click="addBox('intro')">+ Introduction</button>
-                <button type="button" class="btn btn-dark btn-add" title="Add new" @click="addBox('example')">+ Example</button>
-                <button type="button" class="btn btn-dark btn-add" title="Add new" @click="addBox('summary')">+ Summary</button>
-                <button type="button" class="btn btn-dark btn-add" title="Add new" @click="addBox('test')">+ Test</button>
+                <button type="button" class="btn btn-dark btn-intro" title="Add new" @click="addBox('intro')">+ Introduction</button>
+                <button type="button" class="btn btn-dark btn-example" title="Add new" @click="addBox('example')">+ Example</button>
+                <button type="button" class="btn btn-dark btn-summary" title="Add new" @click="addBox('summary')">+ Summary</button>
+                <button type="button" class="btn btn-dark btn-test" title="Add new" @click="addBox('test')">+ Test</button>
             </div>
             <div class="clearfix"></div>
             <hr>
@@ -95,6 +95,22 @@
         }
         .main-content {
             margin: 10px 0;
+        }
+        .btn-intro {
+            background: #e5feb0;
+            color: black;
+        }
+        .btn-example {
+            background: #b4e8c0;
+            color: black;
+        }
+        .btn-summary {
+            background: #e4e6e8;
+            color: black;
+        }
+        .btn-test {
+            background: #dae7fb;
+            color: black;
         }
     }
     .disabled {

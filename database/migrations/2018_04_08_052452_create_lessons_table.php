@@ -19,7 +19,7 @@ class CreateLessonsTable extends Migration
             $table->text('lesson_content')->nullable();
             $table->string('course_id');
             $table->integer('lesson_number');
-            $table->integer('number_view');
+            $table->integer('number_view')->default(0);
             $table->integer('created_by')->nullable();
             $table->timestamps();
         });

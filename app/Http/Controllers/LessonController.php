@@ -87,6 +87,9 @@ class LessonController extends Controller
                 case 'Test': $data = new Test(); break;
             }
         }
+        if ( $request->input('title')) {
+            $data->title = $request->input('title');
+        }
         $data->content = $request->input('content');
         $data->save();
         return response()->json($data);
