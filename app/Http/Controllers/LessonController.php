@@ -19,6 +19,17 @@ class LessonController extends Controller
         return response()->json($lessons);
     }
 
+    public function searchLesson(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        $lessons = Lesson::where('title', 'like', '%' . $keyword .'%')->get();
+        $lessons = $lessons->map(function($item) {
+            $item->course = $item->course->name;
+            return $item;
+        });
+        return response()->json($lessons);
+    }
+
     public function getLesson(Request $request)
     {
         $course_id = Course::where('url', $request->input('course'))->first()->id;

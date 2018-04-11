@@ -11,6 +11,6 @@ class Course extends Model
     const JAVASCRIPT = 3;
 
     public function lessons() {
-        $this->hasMany(Lesson::class);
+        return $this->hasMany(Lesson::class);
     }
 }

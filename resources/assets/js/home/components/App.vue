@@ -1,10 +1,13 @@
 <template>
     <div class="container">
         <app-header></app-header>
-        <navigation></navigation>
+        <navigation @searchResult="results = $event"></navigation>
         <bread-crumb></bread-crumb>
         <div id="content">
-            <router-view :key="$route.fullPath"></router-view>
+            <div v-if="results.length">
+                <search :results="results"></search>
+            </div>
+            <router-view v-else :key="$route.fullPath"></router-view>
             <comment-facebook></comment-facebook>
         </div>
         <div class="clearfix"></div>
@@ -16,14 +19,21 @@
     import AppHeader from '../../common/components/layouts/Header';
     import Navigation from './layouts/Navigation';
     import BreadCrumb from './layouts/BreadCrumb';
+    import Search from './contents/Search';
     import AppFooter from '../../common/components/layouts/Footer';
     import CommentFacebook from '../../common/components/layouts/CommentFacebook';
     export default {
+        data() {
+          return {
+            results: [],
+          }
+        },
         components: {
             AppHeader,
             Navigation,
             AppFooter,
             BreadCrumb,
+          Search,
             CommentFacebook,
         },
         watch: {

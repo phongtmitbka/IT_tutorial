@@ -8,17 +8,36 @@
                 <router-link to="/about">{{ $t('about') | toUpper}}</router-link>
             </li>
             <li>
-                <input type="text" class="form-control" :placeholder="$t('searchPlaceHolder')">
-                <button class="btn btn-primary">{{ $t("search") }}</button>
+                <input type="text" class="form-control" :placeholder="$t('searchPlaceHolder')" v-model="keyword">
+                <button type="button"class="btn btn-primary" @click="search()">{{ $t("search") }}</button>
             </li>
         </ul>
     </div>
 </template>
 <script>
+    import rs from '../../../common/lib/RequestStore';
     export default {
+      data() {
+        return {
+          keyword: '',
+          result: [],
+        }
+      },
       filters: {
         toUpper(val) {
           return val.toUpperCase();
+        }
+      },
+      methods: {
+        search() {
+          this.result = [];
+          this.$emit('searchResult', this.result);
+          if (this.keyword) {
+            rs.getRequest('LessonRequest').searchLesson({keyword: this.keyword}).then(res => {
+              this.result = res;
+              this.$emit('searchResult', this.result);
+            });
+          }
         }
       }
     }

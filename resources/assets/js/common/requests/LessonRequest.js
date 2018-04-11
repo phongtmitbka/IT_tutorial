@@ -7,6 +7,11 @@ export default class LessonRequest extends BaseRequest
     return this.get(url, params);
   }
 
+  searchLesson(params) {
+    let url = '/api/search-lesson';
+    return this.get(url, params);
+  }
+
   updateLesson(params) {
     let url = '/api/lesson';
     return this.post(url, params);
