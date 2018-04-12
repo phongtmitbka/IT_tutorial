@@ -15,6 +15,11 @@ Route::get('/logout', function (){
     Auth::logout();
    return redirect('/');
 });
+
+Route::get('/excute', function () {
+    return view('excute');
+});
+
 Route::get('/current-user', function () {
     return response()->json(Auth::user());
 });

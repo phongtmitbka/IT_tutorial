@@ -1,15 +1,18 @@
 <template>
     <div class="example">
-        <div class="label">Example <span v-if="action == 'edit'" class="fa fa-edit" @click="edit()"></span>
-            <button type="button" v-if="status != 'normal'" class="btn btn-primary btn-save" title="Save"  @click="save()">Save</button>
-        </div>
-        <hr>
-        <textarea name="content" class="content" v-model="exampleContent" :readonly="status == 'normal'">
-        </textarea>
-        <span class="bg-warning" v-if="hasErrors && !exampleContent">The example content is required</span>
-        <div class="excute">
-            <a href="/" target="_blank" class="btn btn-primary">Try It Yourself</a>
-        </div>
+        <form action="/example.php" method="POST" target="_blank">
+            <div class="label">Example <span v-if="action == 'edit'" class="fa fa-edit" @click="edit()"></span>
+                <button type="button" v-if="status != 'normal'" class="btn btn-primary btn-save" title="Save"  @click="save()">Save</button>
+            </div>
+            <hr>
+            <textarea name="content" class="content" v-model="exampleContent">
+            </textarea>
+            <input type="hidden" name="example_id" :value="content.id">
+            <span class="bg-warning" v-if="hasErrors && !exampleContent">The example content is required</span>
+            <div class="excute">
+                <button type="submit" class="btn btn-primary">Try It Yourself</button>
+            </div>
+        </form>
     </div>
 </template>
 <script>
@@ -71,13 +74,6 @@
         .content {
             width: 100%;
             min-height: 400px;
-        }
-        .excute {
-            height: 70px;
-            line-height: 70px;
-            .btn {
-                width: 150px;
-            }
         }
     }
 </style>

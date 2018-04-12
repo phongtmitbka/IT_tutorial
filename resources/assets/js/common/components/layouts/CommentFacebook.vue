@@ -8,6 +8,6 @@
 <style lang="scss" scoped>
     .comment-facebook {
         float: right;
-        margin-right: 20px;
+        margin-right: 140px;
     }
 </style>

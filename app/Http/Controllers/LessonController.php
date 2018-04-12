@@ -105,5 +105,4 @@ class LessonController extends Controller
         $data->save();
         return response()->json($data);
     }
-
 }

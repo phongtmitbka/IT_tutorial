@@ -3,6 +3,7 @@
         <app-header></app-header>
         <navigation></navigation>
         <div id="content">
+            <left-menu></left-menu>
             <router-view :key="$route.fullPath"></router-view>
         </div>
         <div class="clearfix"></div>
@@ -14,11 +15,13 @@
   import AppHeader from '../../common/components/layouts/Header';
   import AppFooter from '../../common/components/layouts/Footer';
   import Navigation from './Navigation';
+  import LeftMenu from './LeftMenu';
   export default {
     components: {
       AppHeader,
       AppFooter,
       Navigation,
+      LeftMenu,
     },
     mounted() {
     }
@@ -44,5 +47,8 @@
 
     #content {
         min-height: 550px;
+        .left-menu {
+            width: 20%;
+        }
     }
 </style>
