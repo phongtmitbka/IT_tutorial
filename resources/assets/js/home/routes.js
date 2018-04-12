@@ -3,7 +3,7 @@ import About from './components/contents/About';
 import AboutCourse from '../common/components/lesson/About';
 import Index from './components/contents/courses/Index';
 import Lesson from './components/contents/courses/Lesson';
-import NotFound from './components/NotFound';
+import NotFound from '../common/components/NotFound';
 
 export default {
     mode: 'history',

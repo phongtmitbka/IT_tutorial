@@ -103,6 +103,16 @@ class LessonController extends Controller
         }
         $data->content = $request->input('content');
         $data->save();
+
         return response()->json($data);
+    }
+
+    public function updateView(Request $request)
+    {
+        if ($request->input('lesson') && $request->input('view')) {
+            $lesson = Lesson::where('lesson_number', $request->input('lesson'))->first();
+            $lesson->number_view++;
+            $lesson->save();
+        }
     }
 }

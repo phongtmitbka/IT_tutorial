@@ -4,7 +4,7 @@
     <style type="text/css">
         .content-file {
             margin: 20px;
-            width: 43%;
+            width: 44%;
             float: left;
             border: 1px solid black;
         }
@@ -30,7 +30,8 @@
             border: 1px solid;
         }
         .btn {
-            padding: 10px 40px;
+            border: 0;
+            padding: 10px 20px;
             border-radius: 3px;
         }
         .btn-run {
@@ -46,17 +47,17 @@
 </head>
 <body>
 <div class="content-file">
-    <form action="./example.php" method="post">
+    <form action="/excute/example.php" method="post">
     <textarea name="content" class="ace_editor">
         <?php
-        echo file_get_contents("./render.php");
+            echo file_get_contents("./render.php");
         ?>
     </textarea>
     <button type="submit" class="btn btn-run">Run</button>
     </form>
 </div>
 <div class="display">
-    <iframe src="/render.php"></iframe>
+    <iframe src="/excute/render.php"></iframe>
 </div>
 </body>
 </html>

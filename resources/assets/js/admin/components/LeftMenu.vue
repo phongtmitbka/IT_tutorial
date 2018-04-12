@@ -54,6 +54,9 @@
                 border: 1px solid #fff8f8;
                 padding: 0 5px;
             }
+            a {
+                display: block;
+            }
         }
     }
 </style>

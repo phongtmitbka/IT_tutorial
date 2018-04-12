@@ -4,6 +4,7 @@
 /public/js/*
 /public/css
 /public/fonts
+/public/excute/render.php
 /storage/*.key
 /vendor
 /.idea

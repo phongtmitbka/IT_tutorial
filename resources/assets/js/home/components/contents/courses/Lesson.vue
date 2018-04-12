@@ -49,10 +49,14 @@
           rs.getRequest('LessonRequest').getListLesson({course: course}).then(res => {
             this.length = res.length;
           });
+        },
+        updateView() {
+          rs.getRequest('LessonRequest').updateView({view: true, lesson: this.$route.params.lesson});
         }
       },
       mounted() {
         this.getContents();
+        this.updateView();
       }
     }
 </script>

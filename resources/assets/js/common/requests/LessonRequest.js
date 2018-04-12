@@ -36,4 +36,10 @@ export default class LessonRequest extends BaseRequest
     let url = '/api/lessons';
     return this.get(url, params);
   }
+
+  updateView(params) {
+    console.log(params);
+    let url = '/api/lesson/update-view';
+    return this.post(url, params);
+  }
 }

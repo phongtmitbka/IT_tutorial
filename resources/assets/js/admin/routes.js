@@ -2,7 +2,7 @@ import Home from './components/contents/Home';
 import ManageCourse from './components/contents/ManageCourse';
 import ManageLesson from './components/contents/ManageLesson';
 import ManagePoster from './components/contents/ManagePoster';
-import NotFound from './components/NotFound';
+import NotFound from '../common/components/NotFound';
 export default {
   mode: 'history',
   routes: [

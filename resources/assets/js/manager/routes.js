@@ -2,7 +2,7 @@ import Home from './components/contents/Home';
 import Index from './components/contents/courses/Index';
 import Lesson from './components/contents/courses/Lesson';
 import About from '../common/components/lesson/About';
-import NotFound from './components/NotFound';
+import NotFound from '../common/components/NotFound';
 export default {
   mode: 'history',
   routes: [

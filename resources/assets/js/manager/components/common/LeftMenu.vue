@@ -73,6 +73,9 @@
                 &:hover {
                     background: #dcd3d3;
                 }
+                a {
+                    display: block;
+                }
             }
             .active {
                 background: #dcd3d3;

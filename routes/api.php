@@ -17,6 +17,7 @@ Route::group(['middleware' => 'api'], function () {
     Route::get('/lesson', 'LessonController@getLesson');
     Route::get('/search-lesson', 'LessonController@searchLesson');
     Route::post('/lesson', 'LessonController@updateLesson');
+    Route::post('/lesson/update-view', 'LessonController@updateView');
     Route::delete('/lesson', 'LessonController@deleteLesson');
     Route::get('/lessons', 'LessonController@getListLesson');
     Route::get('/content', 'LessonController@getLessonContent');
