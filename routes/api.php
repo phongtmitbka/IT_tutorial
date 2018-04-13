@@ -25,6 +25,13 @@ Route::group(['middleware' => 'api'], function () {
 
     Route::get('/courses', 'CourseController@getListCourses');
     Route::get('/course', 'CourseController@getCourse');
-    Route::post('/course', 'CourseController@updateCourse');
+    Route::delete('/course', 'CourseController@delCourse');
+    Route::put('/course', 'CourseController@updateCourse');
+    Route::post('/course', 'CourseController@addCourse');
     Route::get('/group-course', 'CourseController@getGroupCourse');
+
+    Route::get('/posters', 'UserController@posters');
+    Route::post('/poster', 'UserController@addPoster');
+    Route::put('/poster', 'UserController@updatePoster');
+    Route::delete('/poster', 'UserController@delPoster');
 });

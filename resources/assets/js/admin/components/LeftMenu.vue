@@ -2,11 +2,11 @@
     <div class="left-menu">
         <div>
             <div class="title">
-                <router-link to="#">Dashboard</router-link>
+                <router-link to="/admin">Dashboard</router-link>
             </div>
             <ul>
-                <li><router-link to="/admin/manage-course">Quản lý khóa học</router-link></li>
-                <li><router-link to="/admin/manage-poster">Quan lý cộng tác viên</router-link></li>
+                <li><router-link to="/admin/courses" :class="{active: $route.name == 'courses'}">Quản lý khóa học</router-link></li>
+                <li><router-link to="/admin/posters" :class="{active: $route.name == 'posters'}">Quan lý cộng tác viên</router-link></li>
             </ul>
         </div>
     </div>
@@ -42,6 +42,7 @@
             padding: 0 10px;
             color: #ffffff;
             a {
+                display: block;
                 color: #ffffff;
             }
         }
@@ -53,6 +54,9 @@
                 line-height: 38px;
                 border: 1px solid #fff8f8;
                 padding: 0 5px;
+                .active {
+                    background: #dcd3d3;
+                }
             }
             a {
                 display: block;

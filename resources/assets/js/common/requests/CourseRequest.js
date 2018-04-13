@@ -12,10 +12,18 @@ export default class CourseRequest extends BaseRequest
   }
   updateCourse(params) {
     let url = '/api/course';
+    return this.put(url, params);
+  }
+  addCourse(params) {
+    let url = '/api/course';
     return this.post(url, params);
   }
   getGroupCourse(params) {
     let url = '/api/group-course';
     return this.get(url, params);
+  }
+  delCourse(params) {
+    let url = '/api/course';
+    return this.del(url, params);
   }
 }

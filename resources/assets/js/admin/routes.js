@@ -1,7 +1,8 @@
 import Home from './components/contents/Home';
-import ManageCourse from './components/contents/ManageCourse';
-import ManageLesson from './components/contents/ManageLesson';
-import ManagePoster from './components/contents/ManagePoster';
+import CourseList from './components/contents/courses/List';
+import AddCourse from './components/contents/courses/Add';
+import PosterList from './components/contents/posters/List';
+import AddPoster from './components/contents/posters/Add';
 import NotFound from '../common/components/NotFound';
 export default {
   mode: 'history',
@@ -12,19 +13,24 @@ export default {
       component: Home,
     },
     {
-      name: 'manage-course',
-      path: '/admin/manage-course',
-      component: ManageCourse,
+      name: 'courses',
+      path: '/admin/courses',
+      component: CourseList,
     },
     {
-      name: 'manage-lesson',
-      path: '/admin/manage-lesson',
-      component: ManageLesson,
+      name: 'add-course',
+      path: '/admin/course',
+      component: AddCourse,
     },
     {
-      name: 'manage-poster',
-      path: '/admin/manage-poster',
-      component: ManagePoster,
+      name: 'posters',
+      path: '/admin/posters',
+      component: PosterList,
+    },
+    {
+      name: 'add-poster',
+      path: '/admin/add-poster',
+      component: AddPoster,
     },
     {path: '*', component: NotFound}
   ]
