@@ -19,21 +19,21 @@
         <div class="header-bottom">
             <template v-if="$route.fullPath.split('/')[1] == 'poster'">
                 <div class="logo">
-                    <router-link to="/poster">Web Tutorial</router-link>
+                    <router-link to="/poster">IT Tutorial</router-link>
                 </div>
                 <h3>Quan ly khoa hoc</h3>
             </template>
             <template v-else-if="$route.fullPath.split('/')[1] == 'admin'">
                 <div class="logo">
-                    <router-link to="/admin">Web Tutorial</router-link>
+                    <router-link to="/admin">IT Tutorial</router-link>
                 </div>
                 <h3>Quan tri website</h3>
             </template>
             <template v-else>
                 <div class="logo">
-                    <router-link to="/">Web Tutorial</router-link>
+                    <router-link to="/">IT Tutorial</router-link>
                 </div>
-                <h3>Web tutorial</h3>
+                <h3>IT tutorial</h3>
             </template>
         </div>
     </div>

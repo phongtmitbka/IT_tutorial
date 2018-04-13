@@ -10,9 +10,9 @@
             <input type="text" placeholder="Nhập link" class="form-control" id="url" v-model="url">
             <label for="type">Thể loại</label>
             <select id="type" class="form-control type" v-model="type">
-                <option value="1">PHP</option>
-                <option value="2">HTML-CSS</option>
-                <option value="3">Javascript</option>
+                <option value="web">Web</option>
+                <option value="c">C/C++</option>
+                <option value="java">Java</option>
             </select>
             <div class="button-box">
                 <button type="button" class="btn btn-primary btn-submit" @click="submit()">Gửi</button>

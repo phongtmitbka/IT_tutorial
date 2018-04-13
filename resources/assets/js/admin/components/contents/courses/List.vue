@@ -24,9 +24,9 @@
                     <td><input type="text" v-model="course.url" class="form-control"></td>
                     <td>
                         <select name="type" class="form-control" v-model="course.type">
-                            <option value="1">PHP</option>
-                            <option value="2">HTML-CSS</option>
-                            <option value="3">Javascript</option>
+                            <option value="web">Web</option>
+                            <option value="c">C</option>
+                            <option value="java">Java</option>
                         </select>
                     </td>
                     <td><button type="button" class="btn btn-primary" @click="save(course)">Lưu lại</button></td>

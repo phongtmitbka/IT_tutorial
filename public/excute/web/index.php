@@ -47,7 +47,7 @@
 </head>
 <body>
 <div class="content-file">
-    <form action="/excute/example.php" method="post">
+    <form action="/excute/web/example.php" method="post">
     <textarea name="content" class="ace_editor">
         <?php
             echo file_get_contents("./render.php");
@@ -57,7 +57,7 @@
     </form>
 </div>
 <div class="display">
-    <iframe src="/excute/render.php"></iframe>
+    <iframe src="/excute/web/excute.php"></iframe>
 </div>
 </body>
 </html>

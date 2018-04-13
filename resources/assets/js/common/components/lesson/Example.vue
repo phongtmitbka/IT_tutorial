@@ -1,6 +1,6 @@
 <template>
     <div class="example">
-        <form action="/excute/example.php" method="POST" target="_blank">
+        <form :action="'/excute/' + type + '/example.php'" method="POST" target="_blank">
             <div class="label">Example <span v-if="action == 'edit'" class="fa fa-edit" @click="edit()"></span>
                 <button type="button" v-if="status != 'normal'" class="btn btn-primary btn-save" title="Save"  @click="save()">Save</button>
             </div>
@@ -18,7 +18,7 @@
 <script>
   import rs from '../../../common/lib/RequestStore';
   export default {
-    props: ['content','action'],
+    props: ['content','action', 'type'],
     data() {
       return {
         status: this.action,

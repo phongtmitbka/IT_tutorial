@@ -9,7 +9,7 @@
             </template>
             <div class="main-content">
                 <intro v-if="content.type == 'intro'" :content="content" :action="action"></intro>
-                <example v-if="content.type == 'example'" :content="content" :action="action"></example>
+                <example v-if="content.type == 'example'" :content="content" :action="action" :type="type"></example>
                 <summary-lesson v-if="content.type == 'summary'" :content="content" :action="action"></summary-lesson>
                 <test v-if="content.type == 'test'" :content="content" :action="action"></test>
             </div>
@@ -29,6 +29,7 @@
     </div>
 </template>
 <script>
+  import rs from '../../../common/lib/RequestStore';
     import Vue from 'vue';
   import Example from './Example';
   import Intro from './Intro';
@@ -45,6 +46,7 @@
       data() {
         return {
           showRadioBox: false,
+          type: 'web',
         }
       },
       methods: {
@@ -70,6 +72,9 @@
         },
       },
       mounted() {
+        rs.getRequest('CourseRequest').getCourse({course: this.$route.params.course}).then(res => {
+          this.type = res.type;
+        });
       }
     }
 </script>

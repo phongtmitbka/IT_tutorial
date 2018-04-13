@@ -1,9 +1,9 @@
 <template>
     <div class="about">
-        <h1>Giới thiệu về Web Tutorial</h1>
+        <h1>Giới thiệu về IT Tutorial</h1>
         <div class="about-content">
             <p>
-                <b>Web Tutorial</b> là một blog cá nhân được xây dựng với mục đích chia sẻ kiến thức về lập trình web nói chung và lập trình nói riêng.
+                <b>IT Tutorial</b> là một blog cá nhân được xây dựng với mục đích chia sẻ kiến thức về lập trình web nói chung và lập trình nói riêng.
                 Blog được ra đời vào tháng 4 năm 2014 bởi cá nhân Cường, một lập trình viên tự do và hiện nay đã về quê để sống một cuộc sống tự do, không bị gò bó bởi công nghệ và máy tính.
             </p>
             <p>

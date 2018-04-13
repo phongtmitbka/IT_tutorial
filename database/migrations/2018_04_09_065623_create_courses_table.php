@@ -18,7 +18,7 @@ class CreateCoursesTable extends Migration
             $table->text('name');
             $table->text('about');
             $table->string('url');
-            $table->tinyInteger('type');
+            $table->enum('type', ['web', 'c', 'java']);
             $table->integer('total_view')->default(0);
             $table->timestamps();
         });

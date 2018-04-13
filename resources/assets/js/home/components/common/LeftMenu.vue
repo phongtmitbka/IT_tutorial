@@ -9,17 +9,17 @@
             </ul>
         </div>
         <div v-else>
-            <div class="title">PHP</div>
+            <div class="title">Lập trình C/C++</div>
             <ul>
-                <li v-for="course in coursesPhps"><router-link :to="{ name: 'about-course', params: {course: course.url} }">{{ course.name }}</router-link></li>
+                <li v-for="course in courseCs"><router-link :to="{ name: 'about-course', params: {course: course.url} }">{{ course.name }}</router-link></li>
             </ul>
-            <div class="title">HTML - CSS</div>
+            <div class="title">Lập trình Java</div>
             <ul>
-                <li v-for="course in courseHtmlCss"><router-link :to="{ name: 'about-course', params: {course: course.url} }">{{ course.name }}</router-link></li>
+                <li v-for="course in courseJavas"><router-link :to="{ name: 'about-course', params: {course: course.url} }">{{ course.name }}</router-link></li>
             </ul>
-            <div class="title">Javascript</div>
+            <div class="title">Lập trình web</div>
             <ul>
-                <li v-for="course in courseJs"><router-link :to="{ name: 'about-course', params: {course: course.url} }">{{ course.name }}</router-link></li>
+                <li v-for="course in courseWebs"><router-link :to="{ name: 'about-course', params: {course: course.url} }">{{ course.name }}</router-link></li>
             </ul>
         </div>
     </div>
@@ -32,9 +32,9 @@
         lessons: [],
         course: this.$route.params.course,
         courseName: '',
-        coursesPhps: '',
-        courseHtmlCss: '',
-        courseJs: '',
+        courseCs: '',
+        courseJavas: '',
+        courseWebs: '',
       }
     },
     methods: {
@@ -55,14 +55,14 @@
         }
       },
       getCourseByType() {
-        rs.getRequest('CourseRequest').getGroupCourse({ type: 1}).then(res => {
-            this.coursesPhps = res;
+        rs.getRequest('CourseRequest').getGroupCourse({ type: 'c'}).then(res => {
+            this.courseCs = res;
         });
-        rs.getRequest('CourseRequest').getGroupCourse({ type: 2}).then(res => {
-          this.courseHtmlCss = res;
+        rs.getRequest('CourseRequest').getGroupCourse({ type: 'java'}).then(res => {
+          this.courseJavas = res;
         });
-        rs.getRequest('CourseRequest').getGroupCourse({ type: 3}).then(res => {
-          this.courseJs = res;
+        rs.getRequest('CourseRequest').getGroupCourse({ type: 'web'}).then(res => {
+          this.courseWebs = res;
         });
       }
     },
