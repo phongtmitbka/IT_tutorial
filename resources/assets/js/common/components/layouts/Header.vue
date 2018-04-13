@@ -17,9 +17,9 @@
             </template>
         </div>
         <div class="header-bottom">
-            <template v-if="$route.fullPath.split('/')[1] == 'manager'">
+            <template v-if="$route.fullPath.split('/')[1] == 'poster'">
                 <div class="logo">
-                    <router-link to="/manager">Web Tutorial</router-link>
+                    <router-link to="/poster">Web Tutorial</router-link>
                 </div>
                 <h3>Quan ly khoa hoc</h3>
             </template>

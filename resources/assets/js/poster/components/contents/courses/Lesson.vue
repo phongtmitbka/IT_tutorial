@@ -52,7 +52,7 @@
             course: this.$route.params.course,
           };
           rs.getRequest('LessonRequest').delLesson(params).then(res => {
-            this.$router.push('/manager/course/' + this.$route.params.course + '/about');
+            this.$router.push('/poster/course/' + this.$route.params.course + '/about');
           });
         }
       },

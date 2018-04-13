@@ -2,7 +2,7 @@
     <div class="navigation">
         <ul>
             <li>
-                <router-link to="/manager">Quản lý khóa học</router-link>
+                <router-link to="/poster">Quản lý khóa học</router-link>
             </li>
             <li></li>
         </ul>

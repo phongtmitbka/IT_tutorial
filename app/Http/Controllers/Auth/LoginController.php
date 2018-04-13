@@ -26,7 +26,7 @@ class LoginController extends Controller
         if (Auth::user()->level == 1) {
             return '/admin';
         } elseif (Auth::user()->level == 2) {
-            return '/manager';
+            return '/poster';
         } else {
             return '/';
         }

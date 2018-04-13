@@ -30,13 +30,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     })->where('view', '(.*)');
 });
 
-Route::get('/manager/login', function () {
+Route::get('/poster/login', function () {
     return redirect('/login');
 });
 
-Route::group(['prefix' => 'manager', 'middleware' => 'manager'], function () {
+Route::group(['prefix' => 'poster', 'middleware' => 'poster'], function () {
     Route::get('/{view?}', function () {
-        return view('manager.app');
+        return view('poster.app');
     })->where('view', '(.*)');
 });
 

@@ -4,7 +4,7 @@
             <li><router-link to="/">{{ $t('home') | breadCrumbLabel }}</router-link> </li>
             <li v-if="$route.params.course"><router-link :to="{ name: 'about-course', params: {course: $route.params.course} }">{{ $route.params.course | breadCrumbLabel }}</router-link> </li>
             <li v-if="$route.params.lesson"><router-link :to="{ name: 'lesson', params: {course: $route.params.course, lesson: $route.params.lesson} }">Lesson {{ $route.params.lesson }}</router-link> </li>
-            <li v-if="$route.name != 'home' && $route.name != 'manager' && $route.name != 'lesson'"><router-link to="#">{{ $route.name | breadCrumbLabel }}</router-link> </li>
+            <li v-if="$route.name != 'home' && $route.name != 'poster' && $route.name != 'lesson'"><router-link to="#">{{ $route.name | breadCrumbLabel }}</router-link> </li>
         </ul>
     </div>
 </template>

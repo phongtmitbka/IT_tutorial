@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <title>Manager</title>
+    <title>Poster</title>
 </head>
 <body>
 <div class="flex-center position-ref full-height">
     <div class="content">
-        <div id="manager-app">
+        <div id="poster-app">
         </div>
     </div>
 </div>
 </body>
-<script type="text/javascript" src="{{ mix('js/manager/app.js') }}"></script>
+<script type="text/javascript" src="{{ mix('js/poster/app.js') }}"></script>
 <script>
   (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];

@@ -7,29 +7,29 @@ export default {
   mode: 'history',
   routes: [
     {
-      name: 'manager',
-      path: '/manager',
+      name: 'poster',
+      path: '/poster',
       component: Home,
     },
     {
       name: 'course',
-      path: '/manager/course',
+      path: '/poster/course',
       component: Index,
       redirect: { name: 'lesson', params: {course: 'php-basic', lesson: 0} },
       children: [
         {
           name: 'about-course',
-          path: '/manager/course/:course/about',
+          path: '/poster/course/:course/about',
           component: About,
         },
         {
           name: 'add-lesson',
-          path: '/manager/course/:course/lesson',
+          path: '/poster/course/:course/lesson',
           component: Lesson,
         },
         {
           name: 'lesson',
-          path: '/manager/course/:course/lesson/:lesson',
+          path: '/poster/course/:course/lesson/:lesson',
           component: Lesson,
         }
       ]

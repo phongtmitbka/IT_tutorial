@@ -47,7 +47,7 @@
             <button type="button" class="btn btn-primary btn-add" title="Add new row" @click="addRow()"> <span class="fa fa-plus fa-2x"></span> </button>
             <button type="button" class="btn btn-primary btn-save" title="Save"  @click="save()">Save</button>
         </template>
-        <template v-else-if="$route.fullPath.split('/')[1] != 'manager'">
+        <template v-else-if="$route.fullPath.split('/')[1] != 'poster'">
             <button type="button" class="btn btn-primary btn-save" title="Save"  @click="submit()">Gửi bài</button>
         </template>
     </div>

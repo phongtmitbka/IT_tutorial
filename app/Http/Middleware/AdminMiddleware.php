@@ -21,7 +21,7 @@ class AdminMiddleware
                 return $next($request);
             }
             if ((Auth::user()->level == 2)) {
-                return redirect('/manager');
+                return redirect('/poster');
             }
             return redirect('/');
         }

@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 
 const router = new VueRouter(Routers);
 const app = new Vue({
-    el: '#manager-app',
+    el: '#poster-app',
     router,
     render: h => h(App),
 });
