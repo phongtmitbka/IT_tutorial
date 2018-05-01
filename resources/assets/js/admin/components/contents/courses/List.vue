@@ -25,7 +25,7 @@
                     <td>
                         <select name="type" class="form-control" v-model="course.type">
                             <option value="web">Web</option>
-                            <option value="c">C</option>
+                            <option value="c">C/C++</option>
                             <option value="java">Java</option>
                         </select>
                     </td>
@@ -56,10 +56,10 @@
     filters: {
       type(val) {
         switch (val) {
-          case 1: return 'PHP';
-          case 2: return 'HTML-CSS';
-          case 3: return 'Javascript';
-          default: return 'PHP';
+          case 'web': return 'Web';
+          case 'c': return 'C/C++';
+          case 'Java': return 'Java';
+          default: return 'Web';
         }
       }
     },
