@@ -5,8 +5,8 @@
                 <router-link to="/admin">Dashboard</router-link>
             </div>
             <ul>
-                <li><router-link to="/admin/courses" :class="{active: $route.name == 'courses'}">Quản lý khóa học</router-link></li>
-                <li><router-link to="/admin/posters" :class="{active: $route.name == 'posters'}">Quan lý cộng tác viên</router-link></li>
+                <li><router-link to="/admin/courses" :class="{active: $route.name == 'courses' || $route.name == 'add-course'}">Quản lý khóa học</router-link></li>
+                <li><router-link to="/admin/posters" :class="{active: $route.name == 'posters' || $route.name == 'add-poster'}">Quan lý cộng tác viên</router-link></li>
             </ul>
         </div>
     </div>

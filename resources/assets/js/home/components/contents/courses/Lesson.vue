@@ -51,7 +51,7 @@
           });
         },
         updateView() {
-          rs.getRequest('LessonRequest').updateView({view: true, lesson: this.$route.params.lesson});
+          rs.getRequest('LessonRequest').updateView({view: true, course: this.$route.params.course, lesson: this.$route.params.lesson});
         }
       },
       mounted() {

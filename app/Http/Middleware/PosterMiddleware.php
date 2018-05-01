@@ -18,7 +18,12 @@ class PosterMiddleware
     {
         if (Auth::check()) {
             if ((Auth::user()->level == 2)) {
-                return $next($request);
+                if (Auth::user()->isActive) {
+                    return $next($request);
+                } else {
+                    Auth::logout();
+                    return redirect('/login')->withErrors(['email' => 'The account is blocked']);
+                }
             }
             if ((Auth::user()->level == 1)) {
                 return redirect('/admin');

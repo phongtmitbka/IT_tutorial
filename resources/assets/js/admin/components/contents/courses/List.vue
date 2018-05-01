@@ -86,6 +86,7 @@
         this.$set(course, 'status', 'normal');
       },
       cancel(course) {
+        this.getData();
         this.$set(course, 'status', 'normal');
       },
       del(course) {

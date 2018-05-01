@@ -19,7 +19,12 @@
                     <td>{{ index + 1 }}</td>
                     <td><input type="text" class="form-control" v-model="poster.name"></td>
                     <td><input type="text" class="form-control" v-model="poster.email"></td>
-                    <td>{{ poster.isActive }}</td>
+                    <td>
+                        <button class="form-control btn btn-primary" @click="poster.isActive=!poster.isActive">
+                            <template v-if="poster.isActive">Khóa</template>
+                            <template v-else>Kích hoạt</template>
+                        </button>
+                    </td>
                     <td>{{ poster.created_at }}</td>
                     <td><button type="button" class="form-control btn btn-primary" @click="save(poster)">Lưu lại</button></td>
                     <td><button type="button" class="form-control btn btn-primary" @click="cancel(poster)">Hủy</button></td>
@@ -73,6 +78,7 @@
         this.$set(poster, 'status', 'normal');
       },
       cancel(poster) {
+        this.getData();
         this.$set(poster, 'status', 'normal');
       },
       del(poster) {

@@ -110,9 +110,13 @@ class LessonController extends Controller
     public function updateView(Request $request)
     {
         if ($request->input('lesson') && $request->input('view')) {
-            $lesson = Lesson::where('lesson_number', $request->input('lesson'))->first();
+            $course_id = Course::where('url', $request->input('course'))->first()->id;
+            $lesson = Lesson::where('course_id', $course_id)->where('lesson_number', $request->input('lesson'))->first();
             $lesson->number_view++;
             $lesson->save();
+            $course = Course::find($lesson->course_id);
+            $course->total_view++;
+            $course->save();
         }
     }
 }

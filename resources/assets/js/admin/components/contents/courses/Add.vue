@@ -4,10 +4,13 @@
         <div class="content">
             <label for="name">Tên khóa học</label>
             <input type="text" placeholder="Nhập tên khóa học" class="form-control" id="name" v-model="name">
+            <span class="bg-warning" v-if="hasErrors && !name">The title is required</span><br>
             <label for="content">Giới thiệu về khóa học</label>
             <textarea id="content" cols="30" rows="5" class="form-control about" v-model="about"></textarea>
+            <span class="bg-warning" v-if="hasErrors && !name">The title is required</span><br>
             <label for="url">Nhập link</label>
             <input type="text" placeholder="Nhập link" class="form-control" id="url" v-model="url">
+            <span class="bg-warning" v-if="hasErrors && !name">The title is required</span><br>
             <label for="type">Thể loại</label>
             <select id="type" class="form-control type" v-model="type">
                 <option value="web">Web</option>
@@ -30,19 +33,24 @@
           about: '',
           url: '',
           type: '',
+          hasErrors: false
         }
       },
       methods: {
         submit() {
-          let param = {
-            name: this.name,
-            about: this.about,
-            url: this.url,
-            type: this.type,
-          };
-          rs.getRequest('CourseRequest').addCourse(param).then(res => {
-            this.$router.push('/admin/courses');
-          });
+          if (this.name && this.about && this.url) {
+            let param = {
+              name: this.name,
+              about: this.about,
+              url: this.url,
+              type: this.type,
+            };
+            rs.getRequest('CourseRequest').addCourse(param).then(res => {
+              this.$router.push('/admin/courses');
+            });
+          } else {
+            this.hasErrors = true;
+          }
         }
       }
     }

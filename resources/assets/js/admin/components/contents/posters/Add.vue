@@ -4,10 +4,13 @@
         <div class="content">
             <label for="name">Tên cộng tác viên</label>
             <input type="text" placeholder="Nhập tên khóa học" class="form-control" id="name" v-model="name">
+            <span class="bg-warning" v-if="hasErrors && !name">The title is required</span><br>
             <label for="email">Email</label>
             <input type="text" placeholder="Nhập email" class="form-control" id="email" v-model="email">
+            <span class="bg-warning" v-if="hasErrors && !email">The title is required</span><br>
             <label for="password">Mật khẩu</label>
             <input type="password" placeholder="Nhập mật khẩu" class="form-control" id="password" v-model="password">
+            <span class="bg-warning" v-if="hasErrors && !password">The title is required</span><br>
             <div class="button-box">
                 <button type="button" class="btn btn-primary btn-submit" @click="submit()">Gửi</button>
                 <router-link to="/admin/posters" class="btn btn-dark btn-submit">Hủy</router-link>
@@ -23,18 +26,23 @@
         name: '',
         email: '',
         password: '',
+        hasErrors: false
       }
     },
     methods: {
       submit() {
-        let param = {
-          name: this.name,
-          email: this.email,
-          password: this.password,
-        };
-        rs.getRequest('UserRequest').addPoster(param).then(res => {
-          this.$router.push('/admin/posters');
-        });
+        if (this.name && this.email && this.password) {
+          let param = {
+            name: this.name,
+            email: this.email,
+            password: this.password,
+          };
+          rs.getRequest('UserRequest').addPoster(param).then(res => {
+            this.$router.push('/admin/posters');
+          });
+        } else {
+          this.hasErrors = true;
+        }
       }
     }
   }
