@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\InfomationRequest;
 
 class UserController extends Controller
 {
@@ -45,5 +47,25 @@ class UserController extends Controller
     {
         User::find($request->input('id'))->delete();
         return response()->json('delete success');
+    }
+
+    public function updateInfo(InfomationRequest $request)
+    {
+        try {
+            $user = Auth::user();
+            if ($request->input('enter-password') == 'on') {
+                $user->password = bcrypt($request->input('password'));
+            } else {
+                $user->name = $request->input('name');
+            }
+            $user->save();
+            if ($user->level == 1) {
+                return redirect('/admin');
+            }
+            return redirect('/poster');
+
+        } catch (\Exception $e) {
+            return redirect()->back();
+        }
     }
 }

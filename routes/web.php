@@ -24,6 +24,13 @@ Route::get('/admin/login', function () {
     return redirect('/login');
 });
 
+Route::group(['prefix' => 'mypage', 'middleware' => 'auth'], function () {
+    Route::get('/', function () {
+        return view('auth.mypage')->with('user', Auth::user());
+    });
+    Route::post('/update', 'UserController@updateInfo')->name('update_mypage');
+});
+
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/{view?}', function () {
         return view('admin.app');
