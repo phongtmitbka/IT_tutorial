@@ -1,6 +1,6 @@
 <template>
     <div class="about-course">
-        <h1>Khóa học {{ course.name }} <span class="fa fa-edit" @click="status = 'edit'"></span></h1>
+        <h1>Khóa học {{ course.name }} <span class="fa fa-edit" @click="status = 'edit'" v-if="$route.fullPath.split('/')[1] == 'poster' || $route.fullPath.split('/')[1] == 'admin'"></span></h1>
         <hr>
         <div class="about-content">
             <div v-if="status == 'normal'">
