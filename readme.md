@@ -1,59 +1,58 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+**Cài đặt môi trường và project </br>**
+<p>
+<b>Cài đặt Apache, PHP7, MySQL, Phpmyadmin</b><br>
+- Đối với môi trường windows ta chỉ cần tải về và cái đặt gói XAMPP hoặc WAMPP<br>
+- Đối với môi trường ta cần cài đủ apache2, php7, mysql và phpmyadmin<br>
 </p>
 
-## About Laravel
+<p>
+<b>Cài đặt Composer</b><br>
+- Đối với môi trường windows, ta chỉ cần tải file composer.exe về và cài đặt, điều kiện là đã cài đặt php, từ phiên bản 5.3<br>
+- Đối với môi trường linux cần cài đặt từ package trên terminal, kiểm tra bằng cách vào terminal và gõ: composer, nếu có info hiện ra là đã thành công.<br>
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+<p>
+<b>Cài đặt Npm</b><br>
+- Tương tự như cài đặt composer, với môi trường windows ta cần tải về và cài đặt từ file .exe, còn với môi trường linux, ta cần update và cài đặt từ các package.
+<br>
+- Để kiểm trả npm đã được cài đặt thành công hay chưa, ta gõ vào terminal dòng lệnh: npm -v, nếu kết quả trả về là version của npm thì ta đã cài đặt thành công.<br>
+</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<p>
+<b>Cài đặt Git</b><br>
+- Với môi trường windows, ta cần tải về và cài đặt git bash<br>
+- Với môi trường linux ta chỉ cần chạy dòng lệnh sudo apt-get install git<br>
+</p>
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+<p>
+<b>Clone project từ github.com</b><br>
+- Link clone project từ github: https://github.com/phongtmitbka/IT_tutorial.git<br>
+- Tạo file .env và copy nội dung từ .env.example<br>
+</p>
 
-## Learning Laravel
+<p>
+<b>Build vendor</b><br>
+- Từ terminal, ta cd đến thư mục chứa project<br>
+- Chạy lệnh composer install<br>
+- Chạy lệnh composer install<br>
+- Trường hợp xảy ra lỗi phiên bản, ta chạy lại bằng lệnh composer update --no-scripts<br>
+</p>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+<p>
+<b>Build node_modules </b><br>
+- Chạy lệnh npm install<br>
+- Trường hợp xảy ra lỗi phiên bản, ta xóa node_modules đi và  chạy lại bằng lệnh npm install  --no-optional<br>
+</p>
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+<p>
+<b>Khởi tạo database</b><br>
+- Vào địa chỉ localhost/phpmyadmin, tạo database có tên it_tutorials (trùng với tên database trong file .env)<br>
+- Chạy lệnh php artisan key:generate để tạo key project trên .env<br>
+- Chạy php artisan serve để chạy project trên cổng mặc định 8000, muốn thay đổi port thì chạy lệnh: php artisan serve --port=8888<br>
+- Chạy npm run watch để biên dịch các file .scss thành .css.<br>
+</p>
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Pulse Storm](http://www.pulsestorm.net/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<p>
+<b>Chạy thử</b><br>
+- Vào địa chỉ localhost:8000<br>
+</p>

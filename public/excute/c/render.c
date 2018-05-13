@@ -1,9 +1,10 @@
-// My first C program
+#include <iostream>
+using namespace std;
 
-#include <stdio.h>
+// Ham main() la noi su thuc thi chuong trinh bat dau
+
 int main()
 {
-    for(int i = 0; i < 10; i++)
-
-printf("%3d ", i);
+   cout << "Hello World"; // In dong chu Hello World
+   return 0;
 }
