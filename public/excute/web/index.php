@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -46,14 +49,16 @@
     </style>
 </head>
 <body>
+<body>
 <div class="content-file">
     <form action="/excute/web/example.php" method="post">
-    <textarea name="content" class="ace_editor">
+        <input type="hidden" name="_token" value="<?php echo $_SESSION['token'] ?>">
+        <textarea name="content" class="ace_editor">
         <?php
-            echo file_get_contents("./render.php");
+        echo file_get_contents("./render/". $_SESSION['token'] ."/render.php");
         ?>
     </textarea>
-    <button type="submit" class="btn btn-run">Run</button>
+        <button type="submit" class="btn btn-run">Run</button>
     </form>
 </div>
 <div class="display">

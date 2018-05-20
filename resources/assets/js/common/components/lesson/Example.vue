@@ -5,7 +5,8 @@
                 <button type="button" v-if="status != 'normal'" class="btn btn-primary btn-save" title="Save"  @click="save()">Save</button>
             </div>
             <hr>
-            <textarea name="content" class="content" v-model="exampleContent" :readonly="action != 'edit'">
+            <input type="hidden" name="_token" :value="csrf">
+            <textarea name="content" class="content" v-model="exampleContent" :readonly="action != 'edit' && action != 'add'">
             </textarea>
             <input type="hidden" name="example_id" :value="content.id">
             <span class="bg-warning" v-if="hasErrors && !exampleContent">The example content is required</span>
@@ -24,6 +25,7 @@
         status: this.action,
         exampleContent: '',
         hasErrors: false,
+        csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
       }
     },
     methods: {

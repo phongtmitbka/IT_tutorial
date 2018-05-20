@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -48,9 +51,10 @@
 <body>
 <div class="content-file">
     <form action="/excute/java/example.php" method="post">
+        <input type="hidden" name="_token" value="<?php echo $_SESSION['token'] ?>">
     <textarea name="content" class="ace_editor">
         <?php
-            echo file_get_contents("./Main.java");
+            echo file_get_contents("./render/". $_SESSION['token'] ."/Main.java");
         ?>
     </textarea>
     <button type="submit" class="btn btn-run">Run</button>
