@@ -1,10 +1,14 @@
 #include <iostream>
 using namespace std;
 
-// Ham main() la noi su thuc thi chuong trinh bat dau
-
 int main()
 {
-   cout << "Hello World"; // In dong chu Hello World
-   return 0;
+   cout << "Kich co cua char la: " << sizeof(char) << endl;
+   cout << "Kich co cua int la: " << sizeof(int) << endl;
+   cout << "Kich co cua short int la: " << sizeof(short int) << endl;
+   cout << "Kich co cua long int la: " << sizeof(long int) << endl;
+   cout << "Kich co cua float la: " << sizeof(float) << endl;
+   cout << "Kich co cua double la: " << sizeof(double) << endl;
+   cout << "Kich co cua wchar_t la: " << sizeof(wchar_t) << endl;
+   return 0;            
 }

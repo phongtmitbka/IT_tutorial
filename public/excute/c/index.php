@@ -6,58 +6,72 @@ session_start();
 <head>
     <style type="text/css">
         .content-file {
-            margin: 20px;
-            width: 44%;
-            float: left;
-            border: 1px solid black;
-        }
-        textarea {
-            width: 80%;
-            height: 770px;
-            padding: 15px;
-            border: 1px solid;
-            float: left;
-            margin-right: 20px;
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
-        form {
-            padding-top: 20px;
-            padding-left: 30px;
-        }
-        .display {
-            margin: 20px;
             width: 50%;
-            height: 840px;
-            float: right;
+            float: left;
+            padding: 15px 30px;
             border: 1px solid;
+            background: #fdf0f0;
         }
-        .btn {
-            border: 0;
-            padding: 10px 20px;
-            border-radius: 3px;
+        .btn-run-area {
+            height: 40px;
+            text-align: right;
         }
         .btn-run {
-            background: #55558a;
+            background: #474777;
             color: #ffffff;
+            border-radius: 3px;
+            padding: 8px 30px;
+            border: 0;
+        }
+        .line {
+            width: 5%;
+            float: left;
+            background: #e3e3ef;
+            height: 1000px;
+            border: 1px solid #5d5d65;
+        }
+        textarea {
+            width: 94%;
+            height: 1000px;
+            float: right;
         }
         iframe {
-            border: 0;
-            width: 100%;
-            height: 100%;
+            width: 46%;
+            height: 1075px;
+        }
+        .display body {
+            background: #f3f3f3;
         }
     </style>
 </head>
 <body>
 <div class="content-file">
     <form action="/excute/c/example.php" method="post">
-    <input type="hidden" name="_token" value="<?php echo $_SESSION['token'] ?>">
-    <textarea name="content" class="ace_editor">
-        <?php
-            echo file_get_contents("./render/". $_SESSION['token'] ."/render.c");
-        ?>
-    </textarea>
-    <button type="submit" class="btn btn-run">Run</button>
+        <input type="hidden" name="_token" value="<?php echo $_SESSION['token'] ?>">
+        <div class="btn-run-area">
+            <button type="submit" class="btn btn-run">Run</button>
+        </div>
+        <div>
+            <?php
+                $contents = file_get_contents("./render/". $_SESSION['token'] ."/render.c");
+                $contentArray = explode("\n", $contents);
+            ?>
+            <div class="line">
+                <?php
+                    print("<br>");
+                    for ($i = 1; $i <= count($contentArray); $i++) {
+                        print($i);
+                        print("<br>");
+                    }
+                ?>
+            </div>
+            <textarea name="content" class="ace_editor">
+                <?php
+                    print("\n");
+                    print($contents);
+                ?>
+            </textarea>
+        </div>
     </form>
 </div>
 <div class="display">
