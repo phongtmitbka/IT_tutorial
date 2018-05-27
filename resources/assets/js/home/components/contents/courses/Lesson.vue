@@ -52,11 +52,26 @@
         },
         updateView() {
           rs.getRequest('LessonRequest').updateView({view: true, course: this.$route.params.course, lesson: this.$route.params.lesson});
+        },
+        rememberLesson() {
+          rs.getRequest('UserRequest').getCurrentUser().then(res => {
+                if (Object.keys(res).length) {
+                  this.saveRememberLesson(res.id);
+                }
+            });
+        },
+        saveRememberLesson(id) {
+          let params = {
+            id: id,
+            remember_lesson: this.$route.fullPath,
+          };
+          rs.getRequest('UserRequest').updateRememberLesson(params);
         }
       },
       mounted() {
         this.getContents();
         this.updateView();
+        this.rememberLesson();
       }
     }
 </script>

@@ -34,4 +34,5 @@ Route::group(['middleware' => 'api'], function () {
     Route::post('/poster', 'UserController@addPoster');
     Route::put('/poster', 'UserController@updatePoster');
     Route::delete('/poster', 'UserController@delPoster');
+    Route::post('/remember-lesson', 'UserController@updateRememberLesson');
 });

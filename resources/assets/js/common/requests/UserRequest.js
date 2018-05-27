@@ -25,4 +25,9 @@ export default class UserRequest extends BaseRequest
         let url = '/api/poster';
         return this.post(url, params);
     }
+
+    updateRememberLesson(params) {
+      let url = '/api/remember-lesson';
+      return this.post(url, params);
+    }
 }

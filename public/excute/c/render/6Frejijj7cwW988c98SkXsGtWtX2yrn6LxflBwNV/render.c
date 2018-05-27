@@ -1,14 +1,27 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
+// Phan khai bao bien:
+extern int a, b;
+extern int c;
+extern float f;
+  
 int main ()
 {
-/* phan thuc thi vong lap for */
-for( int a = 4; a < 16; a = a + 1 )
-{
-printf("Gia tri cua a la: %d\n", a);
-}
-printf("\n===========================\n");
-printf("VietJack chuc cac ban hoc tot! \n");
+  // Phan dinh ngia bien:
+  int a, b;
+  int c;
+  float f;
+ 
+  // Phan khoi tao bien
+  a = 10;
+  b = 20;
+  c = a + b;
+ 
+  cout << c << endl ;
 
-return 0
+  f = 70.0/3.0;
+  cout << f << endl ;
+ 
+  return 0;
 }

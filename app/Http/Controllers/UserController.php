@@ -68,4 +68,15 @@ class UserController extends Controller
             return redirect()->back();
         }
     }
+
+    public function updateRememberLesson(Request $request) {
+        $user = User::find($request->input('id'));
+        try {
+            $user->remember_lesson = $request->input('remember_lesson');
+            $user->save();
+            return response()->json($user);
+        } catch (\Exception $e) {
+            return response()->json($e);
+        }
+    }
 }

@@ -67,7 +67,7 @@ session_start();
             <div class="line">
                 <?php
                     print("<br>");
-                    for ($i = 1; $i <= count($contentArray); $i++) {
+                    for ($i = 1; $i <= max(40, count($contentArray)); $i++) {
                         print($i);
                         print("<br>");
                     }

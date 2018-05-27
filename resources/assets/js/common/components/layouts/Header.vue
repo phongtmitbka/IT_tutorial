@@ -14,6 +14,13 @@
                 <a href="/mypage">
                     {{ currentUser.name }}
                 </a>
+                <a href="#" v-if="currentUser.remember_lesson && $route.name == 'home'" @click="gotoCurrentLesson()">
+                    Đến bài đang học
+                </a>
+            </template>
+            <template v-else>
+                <a href="/register">Đăng kí</a>
+                <a href="/login">Đăng nhập</a>
             </template>
         </div>
         <div class="header-bottom">
@@ -47,10 +54,20 @@
         currentUser: {},
       }
     },
-    mounted() {
-      rs.getRequest('UserRequest').getCurrentUser().then(res => {
-        this.currentUser = res;
+    methods: {
+      gotoCurrentLesson() {
+        rs.getRequest('UserRequest').getCurrentUser().then(res => {
+          window.location.replace(res.remember_lesson);
+        });
+      },
+      getCurrentUser() {
+        rs.getRequest('UserRequest').getCurrentUser().then(res => {
+          this.currentUser = res;
       });
+      }
+    },
+    mounted() {
+      this.getCurrentUser();
     }
   }
 </script>
