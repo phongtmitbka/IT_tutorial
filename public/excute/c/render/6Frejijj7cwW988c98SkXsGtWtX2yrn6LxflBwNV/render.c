@@ -1,14 +1,14 @@
-#include <iostream>
-using namespace std;
+#include <stdio.h>
 
-int main()
+int main ()
 {
-   cout << "Kich co cua char la: " << sizeof(char) << endl;
-   cout << "Kich co cua int la: " << sizeof(int) << endl;
-   cout << "Kich co cua short int la: " << sizeof(short int) << endl;
-   cout << "Kich co cua long int la: " << sizeof(long int) << endl;
-   cout << "Kich co cua float la: " << sizeof(float) << endl;
-   cout << "Kich co cua double la: " << sizeof(double) << endl;
-   cout << "Kich co cua wchar_t la: " << sizeof(wchar_t) << endl;
-   return 0;            
+/* phan thuc thi vong lap for */
+for( int a = 4; a < 16; a = a + 1 )
+{
+printf("Gia tri cua a la: %d\n", a);
+}
+printf("\n===========================\n");
+printf("VietJack chuc cac ban hoc tot! \n");
+
+return 0
 }

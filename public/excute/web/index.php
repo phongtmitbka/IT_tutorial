@@ -24,16 +24,24 @@ session_start();
             border: 0;
         }
         .line {
-            width: 5%;
+            width: 4%;
             float: left;
             background: #e3e3ef;
             height: 1000px;
             border: 1px solid #5d5d65;
+            line-height: 1.6;
+            font-size: 15px;
+            margin: 0;
+            padding: 0 5px;
         }
         textarea {
             width: 94%;
             height: 1000px;
             float: right;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
         iframe {
             width: 46%;
@@ -69,7 +77,10 @@ session_start();
             <textarea name="content" class="ace_editor">
                 <?php
                 print("\n");
-                print($contents);
+                for ($i = 0; $i < count($contentArray); $i++) {
+                    print(trim($contentArray[$i]));
+                    print("\n");
+                }
                 ?>
             </textarea>
         </div>
